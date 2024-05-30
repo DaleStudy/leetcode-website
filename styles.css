@@ -1,0 +1,9 @@
+.site-header > .title {
+  font-size: 2em;
+  color: #333;
+}
+
+.site-header > .desciption {
+  font-size: 1.5em;
+  color: #666;
+}
