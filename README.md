@@ -7,6 +7,7 @@
 ## Tech Stack
 
 - HTML, CSS, Javascript
+- [Web Components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)
 
 ## References
 
