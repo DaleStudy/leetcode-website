@@ -14,34 +14,7 @@
       rel="stylesheet"
     />
     <script src="./main.js" async defer type="module"></script>
-    <style>
-      footer {
-        background-color: #efefef;
-        padding-bottom: 10rem;
-        padding-right: 10rem;
-        padding-left: 10rem;
-      }
-      footer > div {
-        display: flex;
-        justify-content: space-between;
-        font-size: 1.6rem;
-      }
-      .footer-links {
-        list-style-type: none;
-        padding: 0;
-      }
-      .footer-links li {
-        display: inline;
-        margin: 0 10px;
-      }
-      .footer-links a {
-        text-decoration: none;
-        color: #007bff;
-      }
-      .footer-links a:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <script src="./components/footer-link/footer-link.js" defer></script>
   </head>
   <body>
     <footer>
@@ -52,13 +25,7 @@
           padding-top: 18rem;
         "
       >
-        <ul class="footer-links">
-          <li><a href="/about-us">About Us</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms-of-service">Terms of Service</a></li>
-          <li><a href="/faq">FAQ</a></li>
-        </ul>
+        <footer-link-component href="/faq">FAQ</footer-link-component>
         <div style="display: flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
