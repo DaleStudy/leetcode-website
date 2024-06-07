@@ -1,2 +1,2 @@
 import "./components/divider/divider.js";
-import "./bomponents/hero/hero.js";
+import "./components/hero/hero.js";
