@@ -3,7 +3,7 @@ template.innerHTML = `
   <link rel="stylesheet" href="./components/footer-link/footer-link.css">
   <ul class="footer-link">
     <li>
-      <a id="link" href="#">FAQ</a>
+      <a id="link" href="#"><slot></slot></a>
     </li>
   </ul>
 `;
