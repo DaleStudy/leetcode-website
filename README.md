@@ -1,4 +1,4 @@
-# DALE LEETCODE STUDY GROUP WEBSITE
+# DALE ALGORITHM STUDY GROUP WEBSITE
 
 ## [Link](https://dalestudy.github.io/leetcode-website/)
 
