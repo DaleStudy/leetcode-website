@@ -8,7 +8,7 @@ template.innerHTML = `
   </ul>
 `;
 
-class FooterLinkComponent extends HTMLElement {
+class FooterLink extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
@@ -26,4 +26,4 @@ class FooterLinkComponent extends HTMLElement {
   }
 }
 
-window.customElements.define("footer-link-component", FooterLinkComponent);
+window.customElements.define("footer-link", FooterLink);
