@@ -19,11 +19,20 @@ class FooterLink extends HTMLElement {
     return ["href"];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "href") {
-      this.shadowRoot.getElementById("link").setAttribute("href", newValue);
-    }
-  }
+  constructor() {  
+    this.linkElement = shadow.getElementById("link");  
+    this.updateLink(this.getAttribute("href"));  
+  }  
+
+  attributeChangedCallback(name, oldValue, newValue) {  
+    if (name === "href") {  
+        this.updateLinkHref(newValue);  
+    }  
+  }  
+
+  updateLink(href) {  
+    this.linkElement.setAttribute("href", href);  
+  }  
 }
 
 window.customElements.define("footer-link", FooterLink);
