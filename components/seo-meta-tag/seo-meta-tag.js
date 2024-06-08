@@ -28,4 +28,4 @@ class SEOMetaTags extends HTMLElement {
 }
 
 // Define the custom element 'seo-meta-tags' and associate it with the SEOMetaTags class
-customElements.define('seo-meta-tags', SEOMetaTags);
+customElements.define('seo-meta-tag', SEOMetaTags);
