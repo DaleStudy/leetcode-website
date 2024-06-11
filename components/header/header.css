@@ -9,18 +9,16 @@
 }
 
 header {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Background color with 80% opacity */
+  background-color: rgba(255, 255, 255, 0.8); /* Background color with 80% opacity */
   width: 80%;
   margin: 0 auto; /* Center the content horizontally */
 }
 
 .container {
-  width: 80%;
+  display: flex;
+  justify-content: space-between; /* Space between logo and buttons */
+  align-items: center;
+  margin: 0 auto;
 }
 
 header img {
@@ -38,14 +36,8 @@ span {
   vertical-align: middle;
 }
 
-.discord-join-button {
-  height: 3rem;
-  font-size: 1.6rem;
-  padding: 1rem;
-  color: black;
-}
-.discord-join-button:link {
-  text-decoration: none;
+.buttons-container {
+  display: flex;
 }
 
 a {
