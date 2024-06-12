@@ -9,16 +9,6 @@ class ReviewItem extends HTMLElement {
     this.render();
   }
 
-  static get observedAttributes() {
-    return ["text", "name", "img"];
-  }
-
-  attributeChangedCallback(attrName, oldVal, newVal) {
-    if (oldVal !== newVal) {
-      this.render();
-    }
-  }
-
   // getter to make it clean to access the attribute value and ensure a default empty string if the attribute is missing.
   get text() {
     return this.getAttribute("text") || "";
