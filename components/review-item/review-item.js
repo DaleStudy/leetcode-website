@@ -1,11 +1,11 @@
 class ReviewItem extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
   }
 
   // initial render in here to ensure the element is fully connected to the DOM.
   connectedCallback() {
+    this.attachShadow({ mode: "open" });
     this.render();
   }
 
