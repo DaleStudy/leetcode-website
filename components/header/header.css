@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 1000; /* Ensure the header appears above other content */
   padding: 20px;
-  border-bottom: 0.1rem solid #d3d3d3;
+  border-bottom: 0.1rem var(--border);
 }
 
 header {
