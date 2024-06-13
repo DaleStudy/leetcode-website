@@ -29,7 +29,7 @@ class ReviewItem extends HTMLElement {
         <div class="review-item">
           <div class="review-img-text-container">
             <div class="review-img">
-              <img src="${this.img}" alt="Person">
+              <img src="${this.img}" alt="Reviewer">
             </div>
             <div class="review-text">${this.text}</div>
           </div>
