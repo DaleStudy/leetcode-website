@@ -1,4 +1,5 @@
 import "./components/footer-link/footer-link.js";
+import "./components/footer-icon.js";
 import "./components/header.js";
 import "./components/hero/hero.js";
 import "./components/button-link.js";
