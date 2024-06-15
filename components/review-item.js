@@ -25,6 +25,7 @@ class ReviewItem extends HTMLElement {
   render() {
     try {
       this.shadowRoot.innerHTML = `
+      <style>
         .review-item {
           display: flex;
           flex-direction: column;
@@ -67,6 +68,7 @@ class ReviewItem extends HTMLElement {
           font-size: 16px;
           text-align: right;
         }
+      </style>
         <article class="review-item">
           <section class="review-content">
             <figure>
