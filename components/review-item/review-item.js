@@ -26,15 +26,17 @@ class ReviewItem extends HTMLElement {
     try {
       this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="components/review-item/review-item.css">
-        <div class="review-item">
-          <div class="review-img-text-container">
-            <div class="review-img">
+        <article class="review-item">
+          <section class="review-content">
+            <figure>
               <img src="${this.img}" alt="Reviewer">
-            </div>
-            <div class="review-text">${this.text}</div>
-          </div>
-          <div class="review-name">${this.name}</div>
-        </div>
+            </figure>
+            <blockquote>${this.text}</blockquote>
+          </section>
+          <footer class="review-footer">
+            <figcaption>${this.name}</figcaption>
+          </footer>
+        </article>
       `;
     } catch (error) {
       // log any rendering errors.

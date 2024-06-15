@@ -7,28 +7,34 @@
   background-color: #efefef;
   max-width: 568px;
 }
-.review-img-text-container {
+.review-item blockquote,
+figure {
+  margin: 0;
+}
+.review-content {
   display: flex;
   align-items: center;
 }
-.review-img {
+.review-content figure {
   width: 104px;
   height: 104px;
   flex-shrink: 0;
   margin-right: 31px;
 }
-.review-img img {
+.review-content figure > img {
   width: 100%;
   height: 100%;
   padding-top: 7px;
   border-radius: 50%;
   background-color: #ffffff;
 }
-.review-text {
+.review-content blockquote {
   font-size: 14px;
 }
-.review-name {
+.review-footer {
   width: 100%;
   margin-top: 14px;
+}
+.review-footer figcaption {
   text-align: right;
 }
