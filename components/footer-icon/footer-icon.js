@@ -1,6 +1,6 @@
 const template = document.createElement("template");
 template.innerHTML = `
-  <a href="#" class="footer-link">
+  <a href="#" class="footer-icon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1.6em"
