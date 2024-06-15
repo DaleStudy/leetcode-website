@@ -19,13 +19,14 @@ figure {
   width: 104px;
   height: 104px;
   flex-shrink: 0;
+  object-fit: cover;
   margin-right: 31px;
 }
 .review-content figure > img {
   width: 100%;
   height: 100%;
   padding-top: 7px;
-  border-radius: 50%;
+  border-radius: 48%;
   background-color: #ffffff;
 }
 .review-content blockquote {
@@ -36,5 +37,6 @@ figure {
   margin-top: 14px;
 }
 .review-footer figcaption {
+  font-size: 16px;
   text-align: right;
 }
