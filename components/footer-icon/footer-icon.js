@@ -3,47 +3,48 @@ template.innerHTML = `
   <a href="#" class="footer-link">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width=""
-      height=""
-      viewBox=""
+      width="1.6em"
+      height="1.6em"
+      viewBox="0 0 128 128"
       class="icon"
     >
       <g>
-        <path d="" />
+        <path></path>
       </g>
     </svg>
   </a>
-  `;
+  <slot style="display:none;"></slot>
+`;
 
 class FooterIcon extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: "open" });
     shadow.appendChild(template.content.cloneNode(true));
-    this.updateAttributes();
+
+    this.linkElement = shadow.querySelector("a");
+    this.pathElement = shadow.querySelector("path");
+
+    this.updateLink(this.getAttribute("href"));
+    this.updatePath(this.shadowRoot.querySelector("slot"));
   }
 
   static get observedAttributes() {
-    return ["href", "width", "height", "viewBox", "d"];
+    return ["href", "slot"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue !== newValue) {
-      this.updateAttributes();
+    if (name === "href") {
+      this.updateLink(newValue);
     }
   }
 
-  updateAttributes() {
-    const svg = this.shadowRoot.querySelector("svg");
-    const g = svg.querySelector("g");
-    const path = g.querySelector("path");
-    const link = this.shadowRoot.querySelector("a");
+  updateLink(href) {
+    this.linkElement.setAttribute("href", href);
+  }
 
-    link.setAttribute("href", this.getAttribute("href") || "#");
-    svg.setAttribute("width", this.getAttribute("width") || "1.3em");
-    svg.setAttribute("height", this.getAttribute("height") || "1.3em");
-    svg.setAttribute("viewBox", this.getAttribute("viewBox") || "0 0 128 128");
-    path.setAttribute("d", this.getAttribute("d") || "");
+  updatePath(d) {
+    this.pathElement.setAttribute("d", d.assignedNodes()[0].textContent);
   }
 }
 
