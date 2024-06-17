@@ -69,17 +69,17 @@ class ReviewItem extends HTMLElement {
           text-align: right;
         }
       </style>
-        <article class="review-item">
-          <section class="review-content">
-            <figure>
-              <img src="${this.img}" alt="Reviewer">
-            </figure>
-            <blockquote>${this.text}</blockquote>
-          </section>
-          <footer class="review-footer">
-            <figcaption>${this.name}</figcaption>
-          </footer>
-        </article>
+      <article class="review-item">
+        <section class="review-content">
+          <figure>
+            <img src="${this.img}" alt="Reviewer">
+          </figure>
+          <blockquote>${this.text}</blockquote>
+        </section>
+        <footer class="review-footer">
+          <figcaption>${this.name}</figcaption>
+        </footer>
+      </article>
       `;
     } catch (error) {
       // log any rendering errors.
