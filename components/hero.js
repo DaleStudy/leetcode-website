@@ -18,10 +18,16 @@ template.innerHTML = `
         font-size: 30px; /* Mobile font size */
       }
     }
+
+    /* Ensure the <h2> element inherits styles from :host */
+    h2 {
+      font-weight: inherit;
+      font-size: inherit;
+    }
   </style>
-  <p>
+  <h2>
     <slot></slot>
-  </p>
+  </h2>
 `;
 
 class HeroComponent extends HTMLElement {
