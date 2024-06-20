@@ -144,9 +144,11 @@
 
       .review-card-list {
         display: grid;
-        grid-template-columns: repeat(2, 568px);
-        gap: 10px 9px;
+        grid-template-columns:  minmax(306px, 1fr);
+        gap: 10px;
         padding-top: 40px;
+        place-content: center;
+        place-items: center;
       }
 
       .review-card {
@@ -229,6 +231,20 @@
         margin-bottom: 10rem;
         font-size: 2.4rem;
         font-weight: regular;
+      }
+      
+      /* Medium devices such as tablets (768px and up) */
+      @media only screen and (min-width: 768px) {
+        .review-card-list {
+          grid-template-columns: repeat(2, minmax(306px, 1fr));
+        }
+      }
+
+      /* Large devices such as laptops (1024px and up) */
+      @media only screen and (min-width: 1024px) {
+        .review-card-list {
+          gap: 10px 9px;
+        }
       }
     </style>
   </head>
