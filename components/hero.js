@@ -1,28 +1,27 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const html = `
   <style>
     :host {
       display: block;
       font-weight: 500;
-      font-size: 50px; /* Default font size */
+      font-size: 30px;
     }
 
-    @media (max-width: 1024px) {
-      :host {
-        font-size: 40px; /* Tablet font size */
-      }
-    }
-
-    @media (max-width: 480px) {
-      :host {
-        font-size: 30px; /* Mobile font size */
-      }
-    }
-
-    /* Ensure the <h2> element inherits styles from :host */
     h2 {
       font-weight: inherit;
-      font-size: inherit;
+      font-size: 30px; /* Default font-size for h2 */
+      display: block; /* Ensure block display */
+    }
+
+    @media only screen and (min-width: 768px) {
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      h2 {
+        font-size: 50px;
+      }
     }
   </style>
   <h2>
@@ -30,12 +29,12 @@ template.innerHTML = `
   </h2>
 `;
 
-class HeroComponent extends HTMLElement {
+class Hero extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.innerHTML = html;
   }
 }
 
-window.customElements.define('hero-component', HeroComponent);
+customElements.define('ds-hero', Hero);
