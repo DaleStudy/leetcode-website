@@ -21,6 +21,8 @@ template.innerHTML = `
 
     .buttons-container {
       display: flex;
+      align-items: center;
+      column-gap: 40px;
     }
 
     a {
@@ -48,8 +50,8 @@ template.innerHTML = `
       </a>
     
       <div class="buttons-container">
-        <link-button href="#join-instruction-container" size="small" variant="ghost">참여방법 안내</link-button>
-        <link-button href="https://discord.gg/43UkheRV" size="small" variant="secondary">디스코드 참여하기</link-button>
+        <ds-button-link href="#join-instruction-container" size="small" variant="ghost">참여방법 안내</ds-button-link>
+        <ds-button-link href="https://discord.gg/43UkheRV" size="small" variant="secondary">디스코드 참여하기</ds-button-link>
       </div>
   </header>
 `;
