@@ -8,8 +8,7 @@ const css = `
 
   h2 {
     font-weight: inherit;
-    font-size: 30px; /* Default font-size for h2 */
-    display: block; /* Ensure block display */
+    font-size: 30px;
   }
 
   @media only screen and (min-width: 768px) {
