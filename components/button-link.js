@@ -1,94 +1,11 @@
-const css = /*css*/ `
-<style>
-  /* Default: Extra-small devices such as small phones (less than 640px) */
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: max-content;
-    text-align: center;
-  }
-
-  a.secondary {
-    color: #000;
-    background-color: #d9d9d9;
-  }
-
-  a.small {
-    height: 35px;
-    padding: 10px 20px;
-    font-size: 13px;
-    border-radius: 7px;
-  }
-
-  a.big {
-    height: 45px;
-    padding: 10px 25px;
-    font-size: 14px;
-    border-radius: 10px;
-  }
-
-  a.ghost {
-    border: none;
-    border-radius: 0;
-    height: min-content;
-  }
-
-  a.small.ghost {
-    padding: 0;
-  }
-
-  a.big.ghost {
-    padding: auto;
-    color: #000;
-    background-color: transparent;
-    border: 1px solid #000;
-    border-radius: 10px;
-  }
-
-  /* Medium devices such as tablets (768px and up) */
-  @media only screen and (min-width: 768px) {
-    a.small {
-      padding: 5px 25px;
-      font-size: 14px;
-    }
-
-    a.big {
-      padding: 16px 40px;
-      font-size: 20px;
-    }
-  }
-
-  /* Large devices such as laptops (1024px and up) */
-  @media only screen and (min-width: 1024px) {
-    a.small {
-      padding: 5px 30px;
-      font-size: 16px;
-    }
-  }
-</style>
-`;
-
-const html = /*html*/ `
-<link rel="stylesheet" href="./global-styles.css" />
-<a>
-  <slot></slot>
-</a>
-`;
+import { css, html } from "../html-css-utils.js";
 
 class ButtonLink extends HTMLElement {
   constructor() {
     super();
 
-    this.attachShadow({
-      mode: "open",
-    });
-    this.shadowRoot.innerHTML = css + html;
-
-    this.setDefaultAttributes();
     this.validateAttributes();
-    this.updateAttributes();
+    this.render();
   }
 
   validateAttributes() {
@@ -109,7 +26,7 @@ class ButtonLink extends HTMLElement {
 
     if (this.hasAttribute("variant")) {
       const variant = this.getAttribute("variant");
-      const validVariants = ["ghost", "secondary"];
+      const validVariants = ["ghost", "primary"];
 
       if (!validVariants.includes(variant)) {
         throw new Error(
@@ -119,32 +36,92 @@ class ButtonLink extends HTMLElement {
     }
   }
 
-  setDefaultAttributes() {
-    if (!this.hasAttribute("size")) {
-      this.setAttribute("size", "small");
-    }
-
-    if (!this.hasAttribute("variant")) {
-      this.setAttribute("variant", "ghost");
-    }
+  render() {
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = this.createCss() + this.createHtml();
   }
 
-  updateAttributes() {
-    const link = this.shadowRoot.querySelector("a");
-    link.setAttribute("href", this.getAttribute("href"));
+  createCss() {
+    return css`
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    // Set target to "_blank" only for external links
-    if (!this.getAttribute("href").startsWith("#")) {
-      link.setAttribute("target", "_blank");
-    }
+        width: max-content;
+        text-align: center;
+      }
 
-    if (this.hasAttribute("size")) {
-      link.classList.add(this.getAttribute("size"));
-    }
+      a.small {
+        padding: 10px 20px;
+        font-size: 13px;
+        border-radius: 7px;
+      }
 
-    if (this.hasAttribute("variant")) {
-      link.classList.add(this.getAttribute("variant"));
-    }
+      a.big {
+        padding: 10px 25px;
+        font-size: 14px;
+        border-radius: 7px;
+      }
+
+      a.primary {
+        color: white;
+        font-weight: 500;
+        background-color: var(--primary);
+      }
+
+      a.ghost {
+        border: none;
+        border-radius: 0;
+      }
+
+      a.small.ghost {
+        padding: 0;
+      }
+
+      a.big.ghost {
+        padding: auto;
+        color: black;
+        font-weight: normal;
+        border-radius: 10px;
+        border: 2px solid black;
+      }
+
+      @media only screen and (min-width: 768px) {
+        a.small {
+          padding: 7px 25px;
+          font-size: 14px;
+        }
+
+        a.big {
+          padding: 16px 40px;
+          font-size: 20px;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        a.small {
+          padding: 10px 30px;
+          font-size: 16px;
+        }
+      }
+    `;
+  }
+
+  createHtml() {
+    const href = this.getAttribute("href");
+    const variant = this.getAttribute("variant") ?? "ghost";
+    const size = this.getAttribute("size") ?? "small";
+
+    return html`
+      <a
+        href="${href}"
+        class="${size} ${variant}"
+        target=${href.startsWith("#") ? "_self" : "_blank"}
+      >
+        <slot></slot>
+      </a>
+    `;
   }
 }
 
