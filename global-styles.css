@@ -1,3 +1,12 @@
+:root {
+  --primary: #846de9;
+  --secondary: #24eaca;
+  --bg-100: #fdfdff;
+  --bg-200: #fbfaff;
+  --bg-300: #eee8fe;
+  --text-900: #160b46;
+}
+
 * {
   font-family: "Spoqa Han Sans Neo", "Noto Sans KR", sans-serif;
 }
@@ -6,6 +15,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -34,8 +47,4 @@ a:active {
 
 a:focus {
   outline: none;
-}
-
-html {
-  scroll-behavior: smooth;
 }
