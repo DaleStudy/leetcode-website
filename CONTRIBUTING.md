@@ -15,12 +15,15 @@ We appreciate your time and effort. Here are some guidelines to help you get sta
 
 ## How to Contribute
 
-1.  Add an item(draft) to the [Backlog](https://github.com/orgs/DaleStudy/projects/2/views/1) in the [Project](https://github.com/orgs/DaleStudy/projects/2).
-2.  Convert item(draft) to an Issue with click "Convert to issue" button.
-3.  Create a branch through the Issue.
-4.  Make a PR after you've pushed your code changes (Don't forget to link your PR to the Issue you created earlier).
-5.  After a code review and receiving at least one approval, merge the changes into the main branch.
-6.  The code merged into the main branch will be immediately released through GitHub Pages.
+We manage our project using GitHub Projects. You can find the project [here](https://github.com/orgs/DaleStudy/projects/2). The team holds a weekly meeting to discuss the previous week's progress and plan for the upcoming week.
+
+1. Create ticket(item or draft in Backlog)s together in regular meetings.
+2. Assign yourself to a ticket on [the Kanban board](https://github.com/orgs/DaleStudy/projects/2/views/2).
+3. Convert item to an Issue with click "Convert to issue" button.
+4. Create a branch through the Issue.
+5. Make a PR after you've pushed your code changes (Don't forget to link your PR to the Issue you created earlier).
+6. After a code review and receiving at least one approval, merge the changes into the main branch.
+7. The code merged into the main branch will be immediately released through GitHub Pages.
 
 ## Style Guides
 
@@ -37,4 +40,4 @@ We appreciate your time and effort. Here are some guidelines to help you get sta
 
 ## Community
 
-- Join our [Discord](https://discord.gg/43UkheRV) to connect with other contributors.
+- Join our [Discord](https://discord.gg/6TwzdnW6ze) to connect with other contributors.
