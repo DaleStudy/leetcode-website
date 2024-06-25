@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
@@ -234,21 +234,17 @@
   </head>
 
   <body>
-    <header>
-      <div>
-        <img src="images/logo.png" alt="#" />
-        <span>달레 스터디</span>
-      </div>
-      <div>
-        <link-button size="small" variant="ghost" href="#join-instruction-container">참여방법 안내</link-button>
-        <link-button size="small" variant="secondary" href="https://discord.gg/43UkheRV">디스코드 참여하기</link-button>
-      </div>
-    </header>
+    <header-component></header-component>
 
     <div id="intro-container">
       <div class="hero">
-        <p>해외취업을 위한 커뮤니티 기반 알고리즘 스터디</p>      
-        <link-button size="big" variant="secondary" href="https://discord.gg/43UkheRV">디스코드 참여하기</link-button>
+        <p>해외취업을 위한 커뮤니티 기반 알고리즘 스터디</p>
+        <ds-button-link
+          size="big"
+          variant="primary"
+          href="https://discord.gg/43UkheRV"
+          >디스코드 참여하기</ds-button-link
+        >
       </div>
 
       <div class="intro-image">
@@ -262,14 +258,25 @@
       </div>
       <div class="hero">
         <p>지역에 관계없이 다양한 언어로 참여할 수 있어요</p>
-        <link-button size="big" variant="ghost" outline href="#join-instruction-container">참여방법 안내</link-button>
+        <ds-button-link
+          size="big"
+          variant="ghost"
+          outline
+          href="#join-instruction-container"
+          >참여방법 안내</ds-button-link
+        >
       </div>
     </div>
 
     <div id="review-container">
       <div class="hero">
         <p>코드리뷰를 통해 새로운 관점을 배울 수 있어요</p>
-        <link-button size="big" variant="secondary" href="https://discord.gg/43UkheRV">디스코드 참여하기</link-button>
+        <ds-button-link
+          size="big"
+          variant="primary"
+          href="https://discord.gg/43UkheRV"
+          >디스코드 참여하기</ds-button-link
+        >
       </div>
       <div class="review-image">
         <img src="images/review.png" />
