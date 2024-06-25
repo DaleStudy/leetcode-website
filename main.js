@@ -4,3 +4,4 @@ import "./components/hero.js";
 import "./components/button-link.js";
 import "./components/review-item/review-item.js";
 import "./components/seo-meta-tag/seo-meta-tag.js";
+import "./components/step.js";
