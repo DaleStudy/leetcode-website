@@ -35,7 +35,8 @@ class ReviewItem extends HTMLElement {
         align-items: center;
         border-radius: 10px;
         padding: 39px 20px;
-        background-color: #efefef;
+        background-color: var(--bg-300);
+        color: var(--text-900);
       }
       .review-item blockquote,
       figure {
