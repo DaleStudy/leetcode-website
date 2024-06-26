@@ -32,32 +32,29 @@ class FooterIcon extends HTMLElement {
       slot {
       display: none;
     `;
-    
   }
 
   createHtml() {
     const type = this.getAttribute("type");
     const href = this.getAttribute("href");
 
-    if (type == 'svg') {
-
+    if (type == "svg") {
       const viewBox = this.getAttribute("viewBox");
 
       return html`
         <a href="${href}">
           <svg
-           xmlns="http://www.w3.org/2000/svg"
-           width="24px"
-           height="24px"
-           viewBox="${viewBox}"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24px"
+            height="24px"
+            viewBox="${viewBox}"
           >
             <path></path>
           </svg>
         </a>
         <slot></slot>
       `;
-    }
-    else if (type == 'img'){
+    } else if (type == "img") {
       return html`
         <a href="${href}">
           <img 
@@ -69,35 +66,32 @@ class FooterIcon extends HTMLElement {
         </a>
         <slot></slot>
       `;
-    }
-    else {
+    } else {
       throw new Error('The "type" attribute must be either "svg" or "img".');
     }
-
   }
 
   updateIcon() {
     const type = this.getAttribute("type");
 
-    if (type == 'svg') {
+    if (type == "svg") {
       this.updateSvgPath();
-    }
-    else if (type == 'img'){
+    } else if (type == "img") {
       this.updateImgPath();
     }
   }
 
   updateSvgPath() {
-    const path = this.shadowRoot.querySelector('path');
-    const slot = this.shadowRoot.querySelector('slot');
+    const path = this.shadowRoot.querySelector("path");
+    const slot = this.shadowRoot.querySelector("slot");
     const d = slot.assignedNodes()[0].textContent.trim();
 
-    path.setAttribute('d', d);
+    path.setAttribute("d", d);
   }
 
   updateImgPath() {
     const img = this.shadowRoot.querySelector("img");
-    const slot = this.shadowRoot.querySelector('slot');
+    const slot = this.shadowRoot.querySelector("slot");
     const src = slot.assignedNodes()[0].textContent.trim();
 
     img.setAttribute("src", src);
