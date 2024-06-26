@@ -99,4 +99,4 @@ class FooterIcon extends HTMLElement {
   }
 }
 
-customElements.define("footer-icon", FooterIcon);
+customElements.define("ds-footer-icon", FooterIcon);
