@@ -73,11 +73,6 @@ class ReviewItem extends HTMLElement {
         text-align: center;
       }
 
-      /* Small devices such as large phones (640px and up) */
-      @media only screen and (min-width: 640px) {
-        /* TODO: Check if the media query guideline supports small screens or not. */
-      }
-
       /* Medium devices such as tablets (768px and up) */
       @media only screen and (min-width: 768px) {
         .review-item {
@@ -111,11 +106,6 @@ class ReviewItem extends HTMLElement {
         .review-content figcaption {
           text-align: right;
         }
-      }
-
-      /* Largest devices such as desktops (1280px and up) */
-      @media only screen and (min-width: 1280px) {
-        /* TODO: Add after checking the media query guideline. */
       }
     `;
   }
