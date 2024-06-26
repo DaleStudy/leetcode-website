@@ -18,12 +18,17 @@ class FooterIcon extends HTMLElement {
     }
 
     const iconSrc = this.getAttribute("iconSrc");
-    const extension = iconSrc.slice(-4).toLowerCase();
-
     const validExtensions = [".svg", ".png", ".jpg", ".jpeg"];
+
+    const maxExtensionLength = Math.max(
+      ...validExtensions.map((ext) => ext.length)
+    );
+    const extension = iconSrc.slice(-maxExtensionLength).toLowerCase();
+
     if (!validExtensions.includes(extension)) {
+      const validExtensionsString = validExtensions.join(", ");
       throw new Error(
-        'The "iconSrc" attribute must end with .svg, .png, .jpg, or .jpeg.'
+        `The "iconSrc" attribute must end with one of the following extensions: ${validExtensionsString}.`
       );
     }
   }
@@ -56,10 +61,7 @@ class FooterIcon extends HTMLElement {
 
     return html`
       <a href="${href}" target="_blank">
-        <img
-          src="${iconSrc}"
-          alt="${iconAlt}"
-        />
+        <img src="${iconSrc}" alt="${iconAlt}" />
       </a>
     `;
   }
