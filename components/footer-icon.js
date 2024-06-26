@@ -9,93 +9,59 @@ class FooterIcon extends HTMLElement {
   }
 
   validateAttributes() {
-    if (!this.hasAttribute("href")) {
-      throw new Error('The "href" attribute is required.');
+    const attributes = ["href", "width", "height", "iconSrc", "iconAlt"];
+
+    for (let i = 0; i < attributes.length; i++) {
+      if (!this.hasAttribute(attributes[i])) {
+        throw new Error(`The "${attributes[i]}" attribute is required.`);
+      }
     }
 
-    if (!this.hasAttribute("type")) {
-      throw new Error('The "type" attribute is required.');
+    const iconSrc = this.getAttribute("iconSrc");
+    const extension = iconSrc.slice(-4).toLowerCase();
+
+    const validExtensions = [".svg", ".png", ".jpg", ".jpeg"];
+    if (!validExtensions.includes(extension)) {
+      throw new Error(
+        'The "iconSrc" attribute must end with .svg, .png, .jpg, or .jpeg.'
+      );
     }
   }
 
   render() {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = this.createCss() + this.createHtml();
-    this.updateIcon();
   }
 
   createCss() {
+    const width = this.getAttribute("width");
+    const height = this.getAttribute("height");
+
     return css`
-      .footer-icon {
-        display: inline-block;
+      a {
+        display: block;
       }
-      slot {
-      display: none;
-    }
+
+      img {
+        width: ${width};
+        height: ${height};
+      }
     `;
   }
 
   createHtml() {
-    const type = this.getAttribute("type");
     const href = this.getAttribute("href");
+    const iconSrc = this.getAttribute("iconSrc");
+    const iconAlt = this.getAttribute("iconAlt");
 
-    if (type == "svg") {
-      const viewBox = this.getAttribute("viewBox");
-
-      return html`
-        <a href="${href}">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24px"
-            height="24px"
-            viewBox="${viewBox}"
-          >
-            <path></path>
-          </svg>
-        </a>
-        <slot></slot>
-      `;
-    } else if (type == "img") {
-      return html`
-        <a href="${href}">
-          <img 
-           alt="icon"
-           width="24px"
-           height="24px"
-          >
-          </img>
-        </a>
-        <slot></slot>
-      `;
-    } else {
-      throw new Error('The "type" attribute must be either "svg" or "img".');
-    }
-  }
-
-  updateIcon() {
-    const type = this.getAttribute("type");
-
-    if (type == "svg") {
-      this.updateSvgPath();
-    } else if (type == "img") {
-      this.updateImgPath();
-    }
-  }
-
-  updateSvgPath() {
-    const path = this.shadowRoot.querySelector("path");
-    const slot = this.shadowRoot.querySelector("slot");
-    const d = slot.assignedNodes()[0].textContent.trim();
-
-    path.setAttribute("d", d);
-  }
-
-  updateImgPath() {
-    const img = this.shadowRoot.querySelector("img");
-    const slot = this.shadowRoot.querySelector("slot");
-    const src = slot.assignedNodes()[0].textContent.trim();
-
-    img.setAttribute("src", src);
+    return html`
+      <a href="${href}">
+        <img
+          src="${iconSrc}"
+          alt="${iconAlt}"
+        ></img>
+      </a>
+    `;
   }
 }
 
