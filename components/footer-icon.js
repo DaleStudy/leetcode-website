@@ -31,6 +31,7 @@ class FooterIcon extends HTMLElement {
       }
       slot {
       display: none;
+    }
     `;
   }
 
