@@ -59,7 +59,7 @@ class FooterIcon extends HTMLElement {
         <img
           src="${iconSrc}"
           alt="${iconAlt}"
-        ></img>
+        />
       </a>
     `;
   }
