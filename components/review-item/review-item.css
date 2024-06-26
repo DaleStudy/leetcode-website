@@ -1,0 +1,34 @@
+.review-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 41px 51px 31px;
+  background-color: #efefef;
+  max-width: 568px;
+}
+.review-img-text-container {
+  display: flex;
+  align-items: center;
+}
+.review-img {
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  margin-right: 31px;
+}
+.review-img img {
+  width: 100%;
+  height: 100%;
+  padding-top: 7px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.review-text {
+  font-size: 14px;
+}
+.review-name {
+  width: 100%;
+  margin-top: 14px;
+  text-align: right;
+}
