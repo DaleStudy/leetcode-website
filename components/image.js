@@ -12,13 +12,6 @@ class Image extends HTMLElement {
     if (!this.hasAttribute("alt")) {
       throw new Error('The "alt" attribute is required.');
     }
-
-    const allowedAttributes = ["src", "alt", "width", "height"];
-    for (const attr of this.attributes) {
-      if (!allowedAttributes.includes(attr.name)) {
-        throw new Error(`The attribute "${attr.name}" is not allowed.`);
-      }
-    }
   }
 
   render() {
@@ -28,34 +21,32 @@ class Image extends HTMLElement {
 
   createCss() {
     return css`
-        img {
-          display: block;
-          max-width: 100%;
-        }
+      img {
+        display: block;
+        max-width: 100%;
+      }
     `;
   }
 
   createHtml() {
-    const src = this.getAttribute("src") ?? "";
-    const alt = this.getAttribute("alt") ?? "";
+    const src = this.getAttribute("src") || "";
+    const alt = this.getAttribute("alt") || "";
+    const width = this.getAttribute("width");
+    const height = this.getAttribute("height");
 
     let imgHtml = `<img src="${src}" alt="${alt}"`;
 
-    if (this.hasAttribute("width")) {
-      const width = this.getAttribute("width");
+    if (width) {
       imgHtml += ` width="${width}"`;
     }
 
-    if (this.hasAttribute("height")) {
-      const height = this.getAttribute("height");
+    if (height) {
       imgHtml += ` height="${height}"`;
     }
 
     imgHtml += `>`;
 
-    return `
-      ${imgHtml}
-    `;
+    return imgHtml;
   }
 }
 
