@@ -55,7 +55,7 @@ class FooterIcon extends HTMLElement {
     const iconAlt = this.getAttribute("iconAlt");
 
     return html`
-      <a href="${href}">
+      <a href="${href}" target="_blank">
         <img
           src="${iconSrc}"
           alt="${iconAlt}"
