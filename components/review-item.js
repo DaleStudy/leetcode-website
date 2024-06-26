@@ -9,16 +9,16 @@ class ReviewItem extends HTMLElement {
   }
 
   validateAttributes() {
-    if (!this.hasAttribute("img")) {
-      throw new Error('The "img" attribute is required.');
+    if (!this.hasAttribute("authorImgSrc")) {
+      throw new Error('The "authorImgSrc" attribute is required.');
     }
 
-    if (!this.hasAttribute("text")) {
-      throw new Error('The "text" attribute is required.');
+    if (!this.hasAttribute("content")) {
+      throw new Error('The "content" attribute is required.');
     }
 
-    if (!this.hasAttribute("name")) {
-      throw new Error('The "name" attribute is required.');
+    if (!this.hasAttribute("author")) {
+      throw new Error('The "author" attribute is required.');
     }
   }
 
@@ -111,18 +111,20 @@ class ReviewItem extends HTMLElement {
   }
 
   createHtml() {
-    const img = this.getAttribute("img");
-    const text = this.getAttribute("text");
-    const name = this.getAttribute("name");
+    const authorImgSrc = this.getAttribute("authorImgSrc");
+    const content = this.getAttribute("content");
+    const author = this.getAttribute("author");
 
     return html`
       <article class="review-item">
         <section class="review-img">
-          <figure><img src="${img}" alt="Reviewer" /></figure>
+          <figure>
+            <img src="${authorImgSrc}" alt="Author profile image" />
+          </figure>
         </section>
         <section class="review-content">
-          <blockquote>${text}</blockquote>
-          <figcaption>${name}</figcaption>
+          <blockquote>${content}</blockquote>
+          <figcaption>${author}</figcaption>
         </section>
       </article>
     `;
