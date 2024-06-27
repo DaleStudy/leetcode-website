@@ -5,6 +5,10 @@
   --bg-200: #fbfaff;
   --bg-300: #eee8fe;
   --text-900: #160b46;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 * {
