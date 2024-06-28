@@ -5,7 +5,6 @@ class Header extends HTMLElement {
     super();
     this.render();
     this.setupEventListeners();
-    this.handleResize(); // Ensure the menu is closed initially if needed
   }
 
   setupEventListeners() {
@@ -23,11 +22,19 @@ class Header extends HTMLElement {
     header.classList.toggle('vertical');
     this.classList.toggle('menu-open');
 
-    if (menuIcon.src.includes('menu.png')) {
-      menuIcon.src = 'images/cancel.png';
-    } else {
-      menuIcon.src = 'images/menu.png';
-    }
+    menuIcon.classList.add('hide');
+
+    // Wait for the hide animation to complete before switching the image
+    setTimeout(() => {
+      menuIcon.classList.remove('hide');
+      menuIcon.src = menuIcon.src.includes('menu.png') ? 'images/cancel.png' : 'images/menu.png';
+      menuIcon.classList.add('show');
+
+      // Remove the show class after the animation completes to allow repeated animations
+      setTimeout(() => {
+        menuIcon.classList.remove('show');
+      }, 200);
+    }, 200);
   }
 
   handleResize() {
@@ -36,11 +43,13 @@ class Header extends HTMLElement {
     const menuIcon = this.shadowRoot.querySelector('button img');
 
     if (window.innerWidth >= 768) {
-      // Ensure menu is closed in tablet and desktop view
       buttonLinks.classList.remove('open');
       header.classList.remove('vertical');
       this.classList.remove('menu-open');
       menuIcon.src = 'images/menu.png';
+      menuIcon.classList.remove('menu-clicked');
+      menuIcon.classList.remove('hide');
+      menuIcon.classList.remove('show');
     }
   }
 
@@ -57,7 +66,7 @@ class Header extends HTMLElement {
         left: 0;
         color: var(--text-900);
         padding: 20px 0;
-        font-weight: 500;
+        font-weight: var(--font-weight-medium);
         width: 100%;
         border-bottom: 1px solid var(--bg-300);
         background-color: var(--bg-200);
@@ -116,6 +125,18 @@ class Header extends HTMLElement {
         align-items: center;
         cursor: pointer;
         padding: 0;
+      }
+
+      button img {
+        transition: opacity 200ms ease-in-out;
+      }
+
+      button img.hide {
+        opacity: 0;
+      }
+
+      button img.show {
+        opacity: 1;
       }
 
       .header-content {
