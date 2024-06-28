@@ -19,17 +19,10 @@ class FooterIcon extends HTMLElement {
 
     const iconSrc = this.getAttribute("iconSrc");
     const validExtensions = [".svg", ".png", ".jpg", ".jpeg"];
-
-    const maxExtensionLength = Math.max(
-      ...validExtensions.map((ext) => ext.length)
-    );
-    const extension = iconSrc.slice(-maxExtensionLength).toLowerCase();
+    const extension = iconSrc.slice(iconSrc.lastIndexOf(".")).toLowerCase();
 
     if (!validExtensions.includes(extension)) {
-      const validExtensionsString = validExtensions.join(", ");
-      throw new Error(
-        `The "iconSrc" attribute must end with one of the following extensions: ${validExtensionsString}.`
-      );
+      throw new Error(`The "iconSrc" attribute must end with one of the following extensions: ${validExtensions.join(", ")}.`);
     }
   }
 
