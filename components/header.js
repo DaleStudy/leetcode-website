@@ -13,7 +13,7 @@ class Header extends HTMLElement {
     window.addEventListener('resize', this.handleResize.bind(this));
   }
 
-  toggleMenu() {
+  async toggleMenu() {
     const buttonLinks = this.shadowRoot.querySelector('.buttons-container');
     const menuIcon = this.shadowRoot.querySelector('button img');
     const header = this.shadowRoot.querySelector('header');
@@ -24,17 +24,17 @@ class Header extends HTMLElement {
 
     menuIcon.classList.add('hide');
 
-    // Wait for the hide animation to complete before switching the image
-    setTimeout(() => {
-      menuIcon.classList.remove('hide');
-      menuIcon.src = menuIcon.src.includes('menu.png') ? 'images/cancel.png' : 'images/menu.png';
-      menuIcon.classList.add('show');
+    await this.delay(200);
+    menuIcon.classList.remove('hide');
+    menuIcon.src = menuIcon.src.includes('menu.png') ? 'images/cancel.png' : 'images/menu.png';
+    menuIcon.classList.add('show');
 
-      // Remove the show class after the animation completes to allow repeated animations
-      setTimeout(() => {
-        menuIcon.classList.remove('show');
-      }, 200);
-    }, 200);
+    await this.delay(200);
+    menuIcon.classList.remove('show');
+  }
+
+  delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   handleResize() {
