@@ -20,6 +20,7 @@ class Hero extends HTMLElement {
         h2 {
           font-weight: inherit;
           font-size: 30px;
+          word-break: keep-all;
         }
 
         @media only screen and (min-width: 768px) {
