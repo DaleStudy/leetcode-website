@@ -28,13 +28,6 @@
     <script src="./main.js" async defer type="module"></script>
 
     <style>
-      body {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 130rem;
-      }
-
       header {
         margin: 2rem 0;
         border-bottom: 0.1rem solid #d3d3d3;
@@ -75,22 +68,6 @@
         width: 32%;
         font-size: 5rem;
         font-weight: medium;
-      }
-
-      #intro-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 23.5rem;
-        padding-bottom: 24rem;
-        border-bottom: 0.1rem solid #d3d3d3;
-      }
-
-      .intro-image {
-        width: 55%;
-      }
-
-      .intro-image img {
-        max-width: 100%;
       }
 
       #language-container {
@@ -145,7 +122,7 @@
       /* 'review-card-list' style will be removed when the review card list component is created */
       .review-card-list {
         display: grid;
-        grid-template-columns:  minmax(306px, 1fr);
+        grid-template-columns: minmax(306px, 1fr);
         gap: 10px;
         padding-top: 40px;
         place-content: center;
@@ -233,7 +210,7 @@
         font-size: 2.4rem;
         font-weight: regular;
       }
-      
+
       /* 'review-card-list' style will be removed when the review card list component is created */
       /* Medium devices such as tablets (768px and up) */
       @media only screen and (min-width: 768px) {
@@ -254,21 +231,21 @@
   <body>
     <header-component></header-component>
 
-    <div id="intro-container">
-      <div class="hero">
-        <ds-hero>해외취업을 위한 커뮤니티 기반 알고리즘 스터디</ds-hero>
-        <ds-button-link
-          size="big"
-          variant="primary"
-          href="https://discord.gg/43UkheRV"
-          >디스코드 참여하기</ds-button-link
-        >
-      </div>
+    <ds-intro-section id="intro-section">
+      <ds-hero slot="heading">
+        해외취업을 위한 커뮤니티 기반 알고리즘 스터디
+      </ds-hero>
+      <ds-button-link
+        slot="button"
+        size="big"
+        variant="primary"
+        href="https://discord.gg/43UkheRV"
+      >
+        디스코드 참여하기
+      </ds-button-link>
 
-      <div class="intro-image">
-        <ds-image src="images/roadmap.png" alt="roadmap"></ds-image>
-      </div>
-    </div>
+      <ds-image slot="image" src="images/roadmap.png" alt="roadmap"></ds-image>
+    </ds-intro-section>
 
     <div id="language-container">
       <div class="language-image">
