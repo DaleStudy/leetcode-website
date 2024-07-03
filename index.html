@@ -65,19 +65,6 @@
         vertical-align: middle;
       }
 
-      footer {
-        background-color: #efefef;
-        padding-bottom: 10rem;
-        padding-right: 10rem;
-        padding-left: 10rem;
-      }
-
-      footer > div {
-        display: flex;
-        justify-content: space-between;
-        font-size: 1.6rem;
-      }
-
       .hero {
         width: 32%;
         font-size: 5rem;
@@ -409,7 +396,14 @@
           padding-top: 18rem;
         "
       >
-        <footer-link href="/faq">FAQ</footer-link>
+        <ds-footer-link-list>
+          <!-- TODO: add real links -->
+          <ds-footer-link href="#faq">FAQ</ds-footer-link>
+          <ds-footer-link href="#discover">Discover</ds-footer-link>
+          <ds-footer-link href="#explore">Explore</ds-footer-link>
+          <ds-footer-link href="#books">Books</ds-footer-link>
+        </ds-footer-link-list>
+
         <div style="display: flex; gap: 40px">
           <ds-footer-icon
             href="https://github.com/DaleSeo"
