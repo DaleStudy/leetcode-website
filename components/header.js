@@ -200,7 +200,7 @@ class Header extends HTMLElement {
 
         <div class="buttons-container">
           <ds-button-link href="#join-instruction-container" size="small" variant="ghost">참여방법 안내</ds-button-link>
-          <ds-button-link href="https://discord.gg/43UkheRV" size="small" variant="primary">디스코드 참여하기</ds-button-link>
+          <ds-button-link href="https://discord.gg/6TwzdnW6ze" size="small" variant="primary">디스코드 참여하기</ds-button-link>
         </div>
       </header>
     `;
