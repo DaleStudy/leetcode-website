@@ -14,7 +14,7 @@ class IntroSection extends HTMLElement {
 
   createCss() {
     return css`
-      section {
+      :host {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,31 +32,24 @@ class IntroSection extends HTMLElement {
           );
       }
 
-      .inner-container {
+      section {
         display: flex;
         flex-direction: column;
         row-gap: 30px;
+        margin: 0 27px 0;
+        max-width: 1550px;
 
-        /* NOTE: Requires accurate policy settings */
-        margin: 0 7.5%;
-      }
-
-      @media only screen and (min-width: 768px) {
-        /* NOTE: Requires accurate policy settings */
-        .inner-container {
+        @media only screen and (min-width: 768px) {
           row-gap: 50px;
-          margin: 0 9%;
+          margin: 0 76px 0 77px;
         }
-      }
 
-      @media only screen and (min-width: 1024px) {
-        .inner-container {
+        @media only screen and (min-width: 1024px) {
           position: relative;
           flex-direction: row-reverse;
-          row-gap: unset;
-          /* NOTE: Requires accurate policy settings */
-          margin: 0;
           width: 80%;
+          height: 40vh;
+          margin: 0;
         }
       }
 
@@ -65,28 +58,25 @@ class IntroSection extends HTMLElement {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        /* NOTE: Requires accurate policy settings */
-        row-gap: -4.9px;
+        row-gap: 20px;
+        width: 65%;
 
-        width: 70%;
-      }
-
-      @media only screen and (min-width: 768px) {
-        article {
-          /* NOTE: Requires accurate policy settings */
-          row-gap: -3.2px;
+        @media only screen and (min-width: 768px) {
+          row-gap: 30px;
+          width: 40%;
         }
-      }
 
-      @media only screen and (min-width: 1024px) {
-        article {
-          row-gap: unset;
+        @media only screen and (min-width: 1024px) {
+          justify-content: center;
+          row-gap: 40px;
           width: 40%;
         }
       }
 
-      @media only screen and (min-width: 1024px) {
-        aside {
+      aside {
+        width: 100%;
+
+        @media only screen and (min-width: 1024px) {
           width: 60%;
         }
       }
@@ -96,16 +86,14 @@ class IntroSection extends HTMLElement {
   createHtml() {
     return html`
       <section>
-        <div class="inner-container">
-          <aside>
-            <slot name="image"></slot>
-          </aside>
+        <aside>
+          <slot name="image"></slot>
+        </aside>
 
-          <article>
-            <slot name="heading"></slot>
-            <slot name="button"></slot>
-          </article>
-        </div>
+        <article>
+          <slot name="heading"></slot>
+          <slot name="button"></slot>
+        </article>
       </section>
     `;
   }
