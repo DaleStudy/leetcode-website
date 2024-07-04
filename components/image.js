@@ -9,9 +9,13 @@ class Image extends HTMLElement {
   }
 
   validateAttributes() {
-    if (!this.hasAttribute("alt")) {
-      throw new Error('The "alt" attribute is required.');
-    }
+    const requiredAttributes = ["src", "alt"];
+
+    requiredAttributes.forEach((attribute) => {
+      if (!this.hasAttribute(attribute)) {
+        throw new Error(`The "${attribute}" attribute is required.`);
+      }
+    });
   }
 
   render() {
@@ -23,30 +27,22 @@ class Image extends HTMLElement {
     return css`
       img {
         display: block;
-        max-width: 100%;
       }
     `;
   }
 
   createHtml() {
-    const src = this.getAttribute("src") || "";
-    const alt = this.getAttribute("alt") || "";
+    const src = this.getAttribute("src");
+    const alt = this.getAttribute("alt");
     const width = this.getAttribute("width");
     const height = this.getAttribute("height");
 
-    let imgHtml = `<img src="${src}" alt="${alt}"`;
-
-    if (width) {
-      imgHtml += ` width="${width}"`;
-    }
-
-    if (height) {
-      imgHtml += ` height="${height}"`;
-    }
-
-    imgHtml += `>`;
-
-    return imgHtml;
+    return html`<img
+      src="${src}"
+      alt="${alt}"
+      ${width ? `width="${width}"` : ""}
+      ${height ? `height="${height}"` : ""}
+    />`;
   }
 }
 
