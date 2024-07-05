@@ -176,6 +176,10 @@ class Header extends HTMLElement {
           font-size: 20px;
         }
 
+        :host {
+          z-index: 1000;
+        }
+
         a img {
           width: 45px;
           height: 22.5px;
