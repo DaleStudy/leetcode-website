@@ -8,48 +8,50 @@ class Header extends HTMLElement {
   }
 
   setupEventListeners() {
-    const menuButton = this.shadowRoot.querySelector('button');
-    menuButton.addEventListener('click', this.toggleMenu.bind(this));
-    window.addEventListener('resize', this.handleResize.bind(this));
+    const menuButton = this.shadowRoot.querySelector("button");
+    menuButton.addEventListener("click", this.toggleMenu.bind(this));
+    window.addEventListener("resize", this.handleResize.bind(this));
   }
 
   async toggleMenu() {
-    const buttonLinks = this.shadowRoot.querySelector('.buttons-container');
-    const menuIcon = this.shadowRoot.querySelector('button img');
-    const header = this.shadowRoot.querySelector('header');
+    const buttonLinks = this.shadowRoot.querySelector(".buttons-container");
+    const menuIcon = this.shadowRoot.querySelector("button img");
+    const header = this.shadowRoot.querySelector("header");
+    const menuButton = this.shadowRoot.querySelector("button");
+    buttonLinks.classList.toggle("open");
+    header.classList.toggle("vertical");
+    this.classList.toggle("menu-open");
 
-    buttonLinks.classList.toggle('open');
-    header.classList.toggle('vertical');
-    this.classList.toggle('menu-open');
-
-    menuIcon.classList.add('hide');
-
-    await this.delay(200);
-    menuIcon.classList.remove('hide');
-    menuIcon.src = menuIcon.src.includes('menu.png') ? 'images/cancel.png' : 'images/menu.png';
-    menuIcon.classList.add('show');
+    menuButton.classList.add("hide");
 
     await this.delay(200);
-    menuIcon.classList.remove('show');
+    menuButton.classList.remove("hide");
+    menuIcon.src = menuIcon.src.includes("menu.png")
+      ? "images/cancel.png"
+      : "images/menu.png";
+    menuButton.classList.add("show");
+
+    await this.delay(200);
+    menuButton.classList.remove("show");
   }
 
   delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   handleResize() {
-    const buttonLinks = this.shadowRoot.querySelector('.buttons-container');
-    const header = this.shadowRoot.querySelector('header');
-    const menuIcon = this.shadowRoot.querySelector('button img');
+    const buttonLinks = this.shadowRoot.querySelector(".buttons-container");
+    const header = this.shadowRoot.querySelector("header");
+    const menuButton = this.shadowRoot.querySelector("button");
+    const menuIcon = this.shadowRoot.querySelector("button img");
 
     if (window.innerWidth >= 768) {
-      buttonLinks.classList.remove('open');
-      header.classList.remove('vertical');
-      this.classList.remove('menu-open');
-      menuIcon.src = 'images/menu.png';
-      menuIcon.classList.remove('menu-clicked');
-      menuIcon.classList.remove('hide');
-      menuIcon.classList.remove('show');
+      buttonLinks.classList.remove("open");
+      header.classList.remove("vertical");
+      this.classList.remove("menu-open");
+      menuIcon.src = "images/menu.png";
+      menuButton.classList.remove("hide");
+      menuButton.classList.remove("show");
     }
   }
 
@@ -125,17 +127,14 @@ class Header extends HTMLElement {
         align-items: center;
         cursor: pointer;
         padding: 0;
-      }
-
-      button img {
         transition: opacity 200ms ease-in-out;
       }
 
-      button img.hide {
+      button.hide {
         opacity: 0;
       }
 
-      button img.show {
+      button.show {
         opacity: 1;
       }
 
@@ -199,8 +198,18 @@ class Header extends HTMLElement {
         </div>
 
         <div class="buttons-container">
-          <ds-button-link href="#join-instruction-container" size="small" variant="ghost">참여방법 안내</ds-button-link>
-          <ds-button-link href="https://discord.gg/6TwzdnW6ze" size="small" variant="primary">디스코드 참여하기</ds-button-link>
+          <ds-button-link
+            href="#join-instruction-container"
+            size="small"
+            variant="ghost"
+            >참여방법 안내</ds-button-link
+          >
+          <ds-button-link
+            href="https://discord.gg/6TwzdnW6ze"
+            size="small"
+            variant="primary"
+            >디스코드 참여하기</ds-button-link
+          >
         </div>
       </header>
     `;
