@@ -10,49 +10,20 @@ class Header extends HTMLElement {
   setupEventListeners() {
     const menuButton = this.shadowRoot.querySelector("button");
     menuButton.addEventListener("click", this.toggleMenu.bind(this));
-    window.addEventListener("resize", this.handleResize.bind(this));
   }
 
-  async toggleMenu() {
+  toggleMenu() {
     const buttonLinks = this.shadowRoot.querySelector(".buttons-container");
-    const menuIcon = this.shadowRoot.querySelector("button img");
     const header = this.shadowRoot.querySelector("header");
-    const menuButton = this.shadowRoot.querySelector("button");
+    const menuIcon = this.shadowRoot.querySelector("#menuIcon");
+    const closeIcon = this.shadowRoot.querySelector("#closeIcon");
+
+    menuIcon.classList.toggle("hide");
+    closeIcon.classList.toggle("hide");
+
     buttonLinks.classList.toggle("open");
     header.classList.toggle("vertical");
     this.classList.toggle("menu-open");
-
-    menuButton.classList.add("hide");
-
-    await this.delay(200);
-    menuButton.classList.remove("hide");
-    menuIcon.src = menuIcon.src.includes("menu.png")
-      ? "images/cancel.png"
-      : "images/menu.png";
-    menuButton.classList.add("show");
-
-    await this.delay(200);
-    menuButton.classList.remove("show");
-  }
-
-  delay(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  handleResize() {
-    const buttonLinks = this.shadowRoot.querySelector(".buttons-container");
-    const header = this.shadowRoot.querySelector("header");
-    const menuButton = this.shadowRoot.querySelector("button");
-    const menuIcon = this.shadowRoot.querySelector("button img");
-
-    if (window.innerWidth >= 768) {
-      buttonLinks.classList.remove("open");
-      header.classList.remove("vertical");
-      this.classList.remove("menu-open");
-      menuIcon.src = "images/menu.png";
-      menuButton.classList.remove("hide");
-      menuButton.classList.remove("show");
-    }
   }
 
   render() {
@@ -72,10 +43,18 @@ class Header extends HTMLElement {
         width: 100%;
         border-bottom: 1px solid var(--bg-300);
         background-color: var(--bg-200);
+
+        @media only screen and (min-width: 1024px) {          
+          z-index: 1000;
+        }
       }
 
       :host(.menu-open) {
         background-color: var(--bg-100);
+      }
+
+      *:focus {
+        border: 1px solid black;
       }
 
       header {
@@ -84,6 +63,10 @@ class Header extends HTMLElement {
         justify-content: space-between;
         display: flex;
         align-items: center;
+
+        @media only screen and (min-width: 768px) {
+          flex-direction: row !important;
+        }
       }
 
       header.vertical {
@@ -94,6 +77,14 @@ class Header extends HTMLElement {
         display: none;
         align-items: center;
         column-gap: 40px;
+
+        @media only screen and (min-width: 768px) {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          column-gap: 40px !important;
+          margin-top: 0 !important;
+        }
       }
 
       .buttons-container.open {
@@ -109,81 +100,63 @@ class Header extends HTMLElement {
         gap: 10px;
         align-items: center;
         text-decoration: none;
-      }
 
-      a img {
-        width: 41px;
-        height: 20.5px;
-      }
+        span {
+          display: none;
+          
+          @media only screen and (min-width: 768px) {
+            display: inline;
+            font-size: 16px;
+          }
 
-      a span {
-        display: none;
+          @media only screen and (min-width: 1024px) {
+            font-size: 20px;
+          }
+        }
+
+        img {
+          width: 41px;
+          height: 20.5px;
+          
+          @media only screen and (min-width: 1024px) {
+            width: 45px;
+            height: 22.5px;
+          }
+        }
       }
 
       button {
+        position: relative;
         background-color: var(--bg-200);
         border: none;
         display: flex;
         align-items: center;
         cursor: pointer;
         padding: 0;
+        width: 18px;
+        height: 18px;
+
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
+      }
+
+      button > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
         transition: opacity 200ms ease-in-out;
       }
 
-      button.hide {
+      button > img.hide {
         opacity: 0;
-      }
-
-      button.show {
-        opacity: 1;
       }
 
       .header-content {
         display: flex;
         justify-content: space-between;
         width: 100%;
-      }
-
-      @media only screen and (min-width: 768px) {
-        header {
-          flex-direction: row;
-        }
-
-        a span {
-          display: inline;
-          font-size: 16px;
-        }
-
-        a img {
-          width: 41px;
-          height: 20.5px;
-        }
-
-        .buttons-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          column-gap: 40px;
-        }
-
-        button {
-          display: none;
-        }
-      }
-
-      @media only screen and (min-width: 1024px) {
-        a span {
-          font-size: 20px;
-        }
-
-        :host {
-          z-index: 1000;
-        }
-
-        a img {
-          width: 45px;
-          height: 22.5px;
-        }
       }
     `;
   }
@@ -197,7 +170,21 @@ class Header extends HTMLElement {
             <span>달레 스터디</span>
           </a>
           <button>
-            <img src="images/menu.png" alt="menu icon" />
+            <img
+              width="100%"
+              height="100%"
+              id="menuIcon"
+              src="images/menu.png"
+              alt="menu open icon"
+            />
+            <img
+              width="100%"
+              height="100%"
+              id="closeIcon"
+              class="hide"
+              src="images/cancel.png"
+              alt="menu close icon"
+            />
           </button>
         </div>
 
