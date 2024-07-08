@@ -18,6 +18,11 @@ class Step extends HTMLElement {
 
   createCss() {
     return css`
+      h3,
+      ::slotted(p) {
+        margin: 0;
+        padding: 0;
+      }
       .step {
         display: flex;
         flex-direction: column;
@@ -27,20 +32,21 @@ class Step extends HTMLElement {
         border-radius: 10px;
         padding: 106px 53px;
         text-align: center;
-        max-width: 375px;
-        max-height: 627px;
+        width: 375px;
+        height: 627px;
       }
       .step-title h3 {
         font-size: 36px;
-        margin-bottom: 50px;
+        font-weight: var(--font-weight-medium);
       }
       .step-icon {
         width: 60px;
         height: 60px;
-        margin-bottom: 50px;
+        margin: 50px 0;
       }
       .step-content {
         font-size: 24px;
+        font-weight: var(--font-weight-regular);
         word-break: keep-all;
       }
     `;
