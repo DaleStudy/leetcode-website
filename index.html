@@ -180,11 +180,15 @@
         font-weight: medium;
       }
 
+      /* 'instruction-card-list' style will be removed when the instruction card list component is created */
       .instruction-card-list {
         display: grid;
-        grid-template-columns: repeat(3, 375px);
+        grid-template-columns: minmax(375px, 1fr);
+        grid-template-rows: minmax(400px, 1fr);
         gap: 10px;
         padding-top: 40px;
+        place-content: center;
+        place-items: center;
       }
 
       .instruction-card {

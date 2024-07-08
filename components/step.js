@@ -32,8 +32,6 @@ class Step extends HTMLElement {
         border-radius: 10px;
         padding: 106px 53px;
         text-align: center;
-        width: 375px;
-        height: 627px;
         border: 5px solid transparent;
         background-clip: padding-box, border-box;
         background-origin: padding-box, border-box;
@@ -41,18 +39,33 @@ class Step extends HTMLElement {
           linear-gradient(135deg, #24eaca, #846de9);
       }
       .step-title h3 {
-        font-size: 36px;
+        font-size: 24px;
         font-weight: var(--font-weight-medium);
       }
       .step-icon {
-        width: 60px;
-        height: 60px;
-        margin: 50px 0;
+        width: 40px;
+        height: 40px;
+        margin: 20px 0;
       }
       .step-content {
-        font-size: 24px;
+        font-size: 16px;
         font-weight: var(--font-weight-regular);
         word-break: keep-all;
+      }
+
+      /* Medium devices such as tablets (768px and up) */
+      @media only screen and (min-width: 768px) {
+        .step-title h3 {
+          font-size: 36px;
+        }
+        .step-icon {
+          width: 60px;
+          height: 60px;
+          margin: 50px 0;
+        }
+        .step-content {
+          font-size: 24px;
+        }
       }
     `;
   }
