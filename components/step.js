@@ -8,6 +8,9 @@ class Step extends HTMLElement {
   }
 
   validateAttributes() {
+    if (!this.hasAttribute("step")) {
+      throw new Error('The "step" attribute is required.');
+    }
     if (!this.hasAttribute("iconSrc")) {
       throw new Error('The "iconSrc" attribute is required.');
     }
@@ -27,7 +30,7 @@ class Step extends HTMLElement {
         max-width: 375px;
         max-height: 627px;
       }
-      .step-title ::slotted(h3) {
+      .step-title h3 {
         font-size: 36px;
         margin-bottom: 50px;
       }
@@ -50,7 +53,7 @@ class Step extends HTMLElement {
     return html`
       <article class="step">
         <section class="step-title">
-          <slot name="title"></slot>
+          <h3>Step ${step}</h3>
         </section>
         <img class="step-icon" src="${iconSrc}" alt="Step icon" />
         <section class="step-content">
