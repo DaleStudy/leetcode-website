@@ -1,6 +1,6 @@
 import { css, html } from "../html-css-utils.js";
 
-class Step extends HTMLElement {
+class BaseElement extends HTMLElement {
   constructor() {
     super();
     this.validateAttributes();
@@ -8,12 +8,22 @@ class Step extends HTMLElement {
   }
 
   validateAttributes() {
-    if (!this.hasAttribute("step")) {
-      throw new Error('The "step" attribute is required.');
-    }
-    if (!this.hasAttribute("iconSrc")) {
-      throw new Error('The "iconSrc" attribute is required.');
-    }
+    this.requiredAttributes.forEach((attr) => {
+      if (!this.hasAttribute(attr)) {
+        throw new Error(`The "${attr}" attribute is required.`);
+      }
+    });
+  }
+
+  render() {
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = this.createCss() + this.createHtml();
+  }
+}
+
+class Step extends BaseElement {
+  get requiredAttributes() {
+    return ["step", "iconSrc"];
   }
 
   createCss() {
@@ -86,23 +96,11 @@ class Step extends HTMLElement {
       </article>
     `;
   }
-
-  render() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.innerHTML = this.createCss() + this.createHtml();
-  }
 }
 
-class StepTextLink extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
-  }
-
-  validateAttributes() {
-    if (!this.hasAttribute("link")) {
-      throw new Error('The "link" attribute is required.');
-    }
+class StepTextLink extends BaseElement {
+  get requiredAttributes() {
+    return ["link"];
   }
 
   createCss() {
@@ -113,17 +111,13 @@ class StepTextLink extends HTMLElement {
       }
     `;
   }
+
   createHtml() {
     const link = this.getAttribute("link");
 
     return html`<a class="step-text-link" target="_blank" href="${link}"
       ><slot></slot
     ></a>`;
-  }
-
-  render() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.innerHTML = this.createCss() + this.createHtml();
   }
 }
 
