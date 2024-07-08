@@ -27,13 +27,18 @@ class Step extends HTMLElement {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         background: white;
-        border: 1px solid #000000;
         border-radius: 10px;
         padding: 106px 53px;
         text-align: center;
         width: 375px;
         height: 627px;
+        border: 5px solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image: linear-gradient(white, white),
+          linear-gradient(135deg, #24eaca, #846de9);
       }
       .step-title h3 {
         font-size: 36px;
