@@ -98,7 +98,7 @@ class IconLinkList extends HTMLElement {
       section {
         display: flex;
         align-items: center;
-        gap: 40px;
+        column-gap: 40px;
       }
     `;
   }

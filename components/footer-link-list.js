@@ -41,7 +41,7 @@ class FooterLinks extends HTMLElement {
         row-gap: 10px;
 
         font-size: 16px;
-        color: white;
+        color: var(--bg-100);
       }
 
       @media only screen and (min-width: 768px) {
@@ -49,14 +49,11 @@ class FooterLinks extends HTMLElement {
           flex-direction: row;
           align-items: center;
           column-gap: 20px;
-
-          color: white;
         }
       }
 
       @media only screen and (min-width: 1024px) {
         ul {
-          color: var(--text-900);
           column-gap: 80px;
         }
       }
@@ -95,6 +92,8 @@ class FooterLink extends HTMLElement {
         padding: 0;
         margin: 0;
         list-style-type: none;
+        color: var(--bg-100);
+        font-size: 16px;
       }
     `;
   }

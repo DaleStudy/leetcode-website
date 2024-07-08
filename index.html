@@ -394,56 +394,40 @@
       </div>
     </div>
 
-    <footer>
-      <div
-        style="
-          border-bottom: 0.1rem solid #d3d3d3;
-          padding-bottom: 5rem;
-          padding-top: 18rem;
-        "
-      >
-        <ds-footer-link-list>
-          <!-- TODO: add real links -->
-          <ds-footer-link href="#faq">FAQ</ds-footer-link>
-          <ds-footer-link href="#discover">Discover</ds-footer-link>
-          <ds-footer-link href="#explore">Explore</ds-footer-link>
-          <ds-footer-link href="#books">Books</ds-footer-link>
-        </ds-footer-link-list>
+    <ds-footer>
+      <ds-footer-link-list slot="footer-link-list">
+        <!-- TODO: add real links -->
+        <ds-footer-link href="#faq">FAQ</ds-footer-link>
+        <ds-footer-link href="#discover">Discover</ds-footer-link>
+        <ds-footer-link href="#explore">Explore</ds-footer-link>
+        <ds-footer-link href="#books">Books</ds-footer-link>
+      </ds-footer-link-list>
 
-        <div style="display: flex; gap: 40px">
-          <ds-footer-icon
-            href="https://github.com/DaleSeo"
-            width="24px"
-            height="24px"
-            iconSrc="images/icon-blogger.svg"
-            iconAlt="blogger-icon"
-          ></ds-footer-icon>
-          <ds-footer-icon
-            href="https://www.linkedin.com/in/daleseo/"
-            width="24px"
-            height="24px"
-            iconSrc="images/icon-linkedin.svg"
-            iconAlt="linkedin-icon"
-          ></ds-footer-icon>
-          <ds-footer-icon
-            href="https://github.com/DaleSeo"
-            width="24px"
-            height="24px"
-            iconSrc="images/icon-github.svg"
-            iconAlt="github-icon"
-          ></ds-footer-icon>
-          <ds-footer-icon
-            href="https://www.youtube.com/@DaleSeo"
-            width="24px"
-            height="24px"
-            iconSrc="images/icon-youtube.svg"
-            iconAlt="youtube-icon"
-          ></ds-footer-icon>
-        </div>
-      </div>
-      <div style="margin-top: 5rem; font-size: 1.4rem; font-weight: regular">
-        <p>© 2024 Dale Study. All rights reserved.</p>
-      </div>
-    </footer>
+      <ds-icon-link-list slot="icon-link-list">
+        <ds-icon-link
+          href="https://www.algodale.com/"
+          icon-src="images/blog-icon.png"
+          icon-alt="알고달레 블로그 아이콘"
+        ></ds-icon-link>
+
+        <ds-icon-link
+          href="https://www.linkedin.com/in/daleseo/"
+          icon-src="images/linked-in-icon.png"
+          icon-alt="Dale Seo (달레)의 링크드인 아이콘"
+        ></ds-icon-link>
+
+        <ds-icon-link
+          href="https://github.com/DaleStudy/leetcode-study"
+          icon-src="images/github-icon.png"
+          icon-alt="달레 알고리즘 스터디 깃허브 레포지토리 아이콘"
+        ></ds-icon-link>
+
+        <ds-icon-link
+          href="https://www.youtube.com/@DaleSeo"
+          icon-src="images/youtube-icon.png"
+          icon-alt="Dale Seo (달레)의 유튜브 아이콘"
+        ></ds-icon-link>
+      </ds-icon-link-list>
+    </ds-footer>
   </body>
 </html>
