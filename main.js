@@ -8,3 +8,4 @@ import "./components/intro-section.js";
 import "./components/review-item.js";
 import "./components/seo-meta-tag/seo-meta-tag.js";
 import "./components/step.js";
+import "./components/step-section.js";

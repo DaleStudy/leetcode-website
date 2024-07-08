@@ -140,21 +140,8 @@
         font-size: 5rem;
         font-weight: medium;
       }
-
-      /* 'instruction-card-list' style will be removed when the instruction card list component is created */
-      .instruction-card-list {
-        display: grid;
-        grid-template-columns: minmax(375px, 1fr);
-        grid-template-rows: minmax(400px, 1fr);
-        gap: 10px;
-        padding-top: 40px;
-        place-content: center;
-        place-items: center;
-      }
-      
+ 
       /* 'review-card-list', 'instruction-card-list' style will be removed when the review card list, instruction card list component are created */
-      
-      /* Medium devices such as tablets (768px and up) */
       @media only screen and (min-width: 768px) {
         .review-card-list {
           grid-template-columns: repeat(2, minmax(306px, 1fr));
@@ -257,9 +244,9 @@
       </div>
     </div>
 
-    <div id="join-instruction-container">
-      <span>스터디 참여방법</span>
-      <div class="instruction-card-list">
+    <ds-step-section>
+      <ds-hero>스터디 참여방법</ds-hero>
+      <ds-step-list>
         <ds-step step="1" iconSrc="images/icon_step1.png">
           <p slot="content">
             현재 스터디 1기가 진행중이에요. (2024년 4/21~8/10) 다음 기수 스터디 참여를 원한다면 
@@ -290,8 +277,8 @@
             에서 간단한 모임을 가져요. 멤버 간의 친밀감도 쌓고 해외 취업 관련한 유용한 정보도 공유하고 있어요.
           </p>
         </ds-step>
-      </div>
-    </div>
+      </ds-step-list>
+    </ds-step-section>
 
     <footer>
       <div
