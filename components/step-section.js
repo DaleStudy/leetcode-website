@@ -1,6 +1,6 @@
 import { html, css } from "../html-css-utils.js";
 
-class StepSection extends HTMLElement {
+class StepsSection extends HTMLElement {
   constructor() {
     super();
     this.render();
@@ -13,7 +13,7 @@ class StepSection extends HTMLElement {
 
   createCss() {
     return css`
-      .step-section {
+      section {
         width: 80%;
         max-width: 1550px;
         margin: 0 auto;
@@ -27,11 +27,11 @@ class StepSection extends HTMLElement {
 
   createHtml() {
     return html`
-      <section class="step-section">
+      <section>
         <slot></slot>
       </section>
     `;
   }
 }
 
-customElements.define("ds-step-section", StepSection);
+customElements.define("ds-steps-section", StepsSection);
