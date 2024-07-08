@@ -1,6 +1,6 @@
 import { css, html } from "../html-css-utils.js";
 
-class BaseElement extends HTMLElement {
+class BaseStepElement extends HTMLElement {
   constructor() {
     super();
     this.validateAttributes();
@@ -21,7 +21,7 @@ class BaseElement extends HTMLElement {
   }
 }
 
-class Step extends BaseElement {
+class Step extends BaseStepElement {
   get requiredAttributes() {
     return ["step", "iconSrc"];
   }
@@ -77,6 +77,13 @@ class Step extends BaseElement {
           font-size: 24px;
         }
       }
+
+      /* Large devices such as desktops and laptops (1024px and up) */
+      @media only screen and (min-width: 1024px) {
+        .step {
+          min-height: 627px;
+        }
+      }
     `;
   }
 
@@ -98,7 +105,7 @@ class Step extends BaseElement {
   }
 }
 
-class StepTextLink extends BaseElement {
+class StepTextLink extends BaseStepElement {
   get requiredAttributes() {
     return ["link"];
   }
@@ -115,9 +122,9 @@ class StepTextLink extends BaseElement {
   createHtml() {
     const link = this.getAttribute("link");
 
-    return html`<a class="step-text-link" target="_blank" href="${link}"
-      ><slot></slot
-    ></a>`;
+    return html`<a class="step-text-link" target="_blank" href="${link}">
+      <slot></slot>
+    </a>`;
   }
 }
 
