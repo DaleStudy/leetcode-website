@@ -1,6 +1,6 @@
 import { css, html } from "../html-css-utils.js";
 
-class BaseReviewElement extends HTMLElement {
+class BaseParticipantReviewElement extends HTMLElement {
   constructor() {
     super();
     this.render();
@@ -20,10 +20,10 @@ class BaseReviewElement extends HTMLElement {
   }
 }
 
-class ReviewList extends BaseReviewElement {
+class ParticipantReviewList extends BaseParticipantReviewElement {
   createCss() {
     return css`
-      .review-list {
+      .participant-review-list {
         width: 100%;
         display: grid;
         grid-template-columns: minmax(306px, 1fr);
@@ -45,14 +45,14 @@ class ReviewList extends BaseReviewElement {
 
   createHtml() {
     return html`
-      <div class="review-list">
+      <div class="participant-review-list">
         <slot></slot>
       </div>
     `;
   }
 }
 
-class Review extends BaseReviewElement {
+class ParticipantReview extends BaseParticipantReviewElement {
   constructor() {
     super();
     this.validateAttributes(["authorImgSrc", "content", "author"]);
@@ -92,7 +92,7 @@ class Review extends BaseReviewElement {
           margin-top: 16px;
         }
       }
-      .review-img {
+      .participant-review-img {
         width: 104px;
         height: 104px;
         flex-shrink: 0;
@@ -102,14 +102,14 @@ class Review extends BaseReviewElement {
           margin-right: 31px;
         }
       }
-      .review-img figure > img {
+      .participant-review-img figure > img {
         width: 100%;
         height: 100%;
         padding-top: 7px;
         border-radius: 48%;
         background-color: #ffffff;
       }
-      .review-content {
+      .participant-review-content {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -122,7 +122,7 @@ class Review extends BaseReviewElement {
           text-align: left;
         }
       }
-      .review-content blockquote {
+      .participant-review-content blockquote {
         font-size: 14px;
         margin-top: 17px;
         word-break: keep-all;
@@ -132,7 +132,7 @@ class Review extends BaseReviewElement {
           word-break: unset;
         }
       }
-      .review-content figcaption {
+      .participant-review-content figcaption {
         width: 100%;
         font-size: 16px;
         text-align: center;
@@ -151,12 +151,12 @@ class Review extends BaseReviewElement {
 
     return html`
       <article>
-        <section class="review-img">
+        <section class="participant-review-img">
           <figure>
             <img src="${authorImgSrc}" alt="Author profile image" />
           </figure>
         </section>
-        <section class="review-content">
+        <section class="participant-review-content">
           <blockquote>${content}</blockquote>
           <figcaption>${author}</figcaption>
         </section>
@@ -165,5 +165,5 @@ class Review extends BaseReviewElement {
   }
 }
 
-customElements.define("ds-review-list", ReviewList);
-customElements.define("ds-review", Review);
+customElements.define("ds-participant-review-list", ParticipantReviewList);
+customElements.define("ds-participant-review", ParticipantReview);

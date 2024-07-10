@@ -1,6 +1,6 @@
 import { html, css } from "../html-css-utils.js";
 
-class ReviewsSection extends HTMLElement {
+class ParticipantReviewsSection extends HTMLElement {
   constructor() {
     super();
     this.render();
@@ -34,4 +34,7 @@ class ReviewsSection extends HTMLElement {
   }
 }
 
-customElements.define("ds-reviews-section", ReviewsSection);
+customElements.define(
+  "ds-participant-reviews-section",
+  ParticipantReviewsSection
+);
