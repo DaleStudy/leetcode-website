@@ -41,7 +41,7 @@ class LanguageSection extends HTMLElement {
         }
       }
 
-      div {
+      .hero {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -61,11 +61,18 @@ class LanguageSection extends HTMLElement {
         }
       }
 
+      .gap {
+        @media only screen and (min-width: 1024px) {
+          justify-content: center;
+          width: 16%;
+        }
+      }
+
       aside {
         width: 100%;
 
         @media only screen and (min-width: 1024px) {
-          width: 63%;
+          width: 47%;
         }
       }
 
@@ -98,9 +105,6 @@ class LanguageSection extends HTMLElement {
 
         ::slotted([slot="desktop-image"]) {
           display: block;
-          width: auto;
-          height: 100%;
-          
         }
       }
     `;
@@ -115,7 +119,9 @@ class LanguageSection extends HTMLElement {
           <slot name="mobile-image"></slot>
         </aside>
 
-        <div>
+        <div class="gap"></div>
+
+        <div class="hero">
           <slot name="heading"></slot>
           <slot name="button"></slot>
         </div>
