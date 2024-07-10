@@ -28,16 +28,18 @@ class ParticipantReviewList extends BaseParticipantReviewElement {
         display: grid;
         grid-template-columns: minmax(306px, 1fr);
         gap: 10px;
-        padding-top: 40px;
         place-content: center;
         place-items: center;
+        margin-top: 20px;
 
         @media only screen and (min-width: 768px) {
           grid-template-columns: repeat(2, minmax(306px, 1fr));
+          margin-top: 30px;
         }
 
         @media only screen and (min-width: 1024px) {
           gap: 10px 9px;
+          margin-top: 40px;
         }
       }
     `;
