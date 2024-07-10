@@ -129,19 +129,16 @@
         place-content: center;
         place-items: center;
       }
- 
-      /* 'review-card-list', 'instruction-card-list' style will be removed when the review card list, instruction card list component are created */
-      @media only screen and (min-width: 768px) {
-        .review-card-list {
-          grid-template-columns: repeat(2, minmax(306px, 1fr));
-        }
+
+      #join-instruction-container {
+        margin-top: 15rem;
+        padding-bottom: 15rem;
+        border-bottom: 0.1rem solid #d3d3d3;
       }
 
-      /* Large devices such as laptops (1024px and up) */
-      @media only screen and (min-width: 1024px) {
-        .review-card-list {
-          gap: 10px 9px;
-        }
+      #join-instruction-container > span {
+        font-size: 5rem;
+        font-weight: medium;
       }
     </style>
   </head>
@@ -228,36 +225,36 @@
       ></ds-image>
     </ds-code-review-section>
 
-    <div id="member-review-container">
-      <span>참가자 후기</span>
-      <div class="review-card-list">
-        <ds-review-item
+    <ds-participant-reviews-section>
+      <ds-hero>참가자 후기</ds-hero>
+      <ds-participant-review-list>
+        <ds-participant-review
           authorImgSrc="images/human_color.png"
           content="해외취업을 목표로 리트코드 스터디 모임에 참여한 것은 좋은 선택이었습니다. 특히 혼자 공부하는 것보다 멤버들과 함께 문제를 풀며 시너지를 낼 수 있었습니다. 모임 중에 다양한 질문을 주고받으며 실력을 쌓을 수 있었고, 해외 취업 준비에 실질적인 도움을 받을 수 있었습니다."
           author="John Doe"
-        ></ds-review-item>
-        <ds-review-item
+        ></ds-participant-review>
+        <ds-participant-review
           authorImgSrc="images/human_color.png"
           content="해외취업을 목표로 리트코드 스터디 모임에 참여한 것은 좋은 선택이었습니다. 특히 혼자 공부하는 것보다 멤버들과 함께 문제를 풀며 시너지를 낼 수 있었습니다. 모임 중에 다양한 질문을 주고받으며 실력을 쌓을 수 있었고, 해외 취업 준비에 실질적인 도움을 받을 수 있었습니다."
           author="John Doe"
-        ></ds-review-item>
-        <ds-review-item
+        ></ds-participant-review>
+        <ds-participant-review
           authorImgSrc="images/human_color.png"
           content="해외취업을 목표로 리트코드 스터디 모임에 참여한 것은 좋은 선택이었습니다. 특히 혼자 공부하는 것보다 멤버들과 함께 문제를 풀며 시너지를 낼 수 있었습니다. 모임 중에 다양한 질문을 주고받으며 실력을 쌓을 수 있었고, 해외 취업 준비에 실질적인 도움을 받을 수 있었습니다."
           author="John Doe"
-        ></ds-review-item>
-        <ds-review-item
+        ></ds-participant-review>
+        <ds-participant-review
           authorImgSrc="images/human_color.png"
           content="해외취업을 목표로 리트코드 스터디 모임에 참여한 것은 좋은 선택이었습니다. 특히 혼자 공부하는 것보다 멤버들과 함께 문제를 풀며 시너지를 낼 수 있었습니다. 모임 중에 다양한 질문을 주고받으며 실력을 쌓을 수 있었고, 해외 취업 준비에 실질적인 도움을 받을 수 있었습니다."
           author="John Doe"
-        ></ds-review-item>
-        <ds-review-item
+        ></ds-participant-review>
+        <ds-participant-review
           authorImgSrc="images/human_color.png"
           content="해외취업을 목표로 리트코드 스터디 모임에 참여한 것은 좋은 선택이었습니다. 특히 혼자 공부하는 것보다 멤버들과 함께 문제를 풀며 시너지를 낼 수 있었습니다. 모임 중에 다양한 질문을 주고받으며 실력을 쌓을 수 있었고, 해외 취업 준비에 실질적인 도움을 받을 수 있었습니다."
           author="John Doe"
-        ></ds-review-item>
-      </div>
-    </div>
+        ></ds-participant-review>
+      </ds-participant-review-list>
+    </ds-participant-reviews-section>
 
     <ds-steps-section id="steps-section">
       <ds-hero>스터디 참여방법</ds-hero>
