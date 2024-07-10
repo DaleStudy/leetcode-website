@@ -129,17 +129,6 @@
         place-content: center;
         place-items: center;
       }
-
-      #join-instruction-container {
-        margin-top: 15rem;
-        padding-bottom: 15rem;
-        border-bottom: 0.1rem solid #d3d3d3;
-      }
-
-      #join-instruction-container > span {
-        font-size: 5rem;
-        font-weight: medium;
-      }
  
       /* 'review-card-list', 'instruction-card-list' style will be removed when the review card list, instruction card list component are created */
       @media only screen and (min-width: 768px) {
@@ -211,7 +200,7 @@
         slot="button"
         size="big"
         variant="ghost"
-        href="#join-instructions"
+        href="#steps-section"
       >
         참여방법 안내
       </ds-button-link>
@@ -270,7 +259,7 @@
       </div>
     </div>
 
-    <ds-steps-section>
+    <ds-steps-section id="steps-section">
       <ds-hero>스터디 참여방법</ds-hero>
       <ds-step-list>
         <ds-step step="1" iconSrc="images/icon_step1.png">
