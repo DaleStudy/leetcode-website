@@ -32,9 +32,14 @@ class StepList extends BaseStepElement {
         row-gap: 10px;
         margin-top: 20px;
 
+        @media only screen and (min-width: 768px) {
+          margin-top: 30px;
+        }
+
         @media only screen and (min-width: 1024px) {
           flex-direction: row;
           column-gap: 10px;
+          margin-top: 40px;
         }
       }
       .step-list ::slotted(ds-step) {
@@ -94,6 +99,7 @@ class Step extends BaseStepElement {
       .step-title h3 {
         font-size: 24px;
         font-weight: var(--font-weight-medium);
+
         @media only screen and (min-width: 768px) {
           font-size: 36px;
         }
@@ -102,6 +108,7 @@ class Step extends BaseStepElement {
         width: auto;
         height: 40px;
         margin: 20px 0;
+
         @media only screen and (min-width: 768px) {
           width: 60px;
           height: 60px;
@@ -112,6 +119,7 @@ class Step extends BaseStepElement {
         font-size: 16px;
         font-weight: var(--font-weight-regular);
         word-break: keep-all;
+
         @media only screen and (min-width: 768px) {
           font-size: 24px;
         }
