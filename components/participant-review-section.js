@@ -18,6 +18,7 @@ class ParticipantReviewsSection extends HTMLElement {
         max-width: 1550px;
         margin: 0 auto;
         padding: 100px 0;
+
         @media only screen and (min-width: 1024px) {
           padding: 149px 0;
         }

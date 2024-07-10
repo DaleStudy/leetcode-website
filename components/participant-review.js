@@ -128,6 +128,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
         font-size: 14px;
         margin-top: 17px;
         word-break: keep-all;
+
         @media only screen and (min-width: 1024px) {
           margin-top: 0;
           margin-bottom: 14px;
