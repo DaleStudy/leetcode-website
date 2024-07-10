@@ -217,20 +217,27 @@
       </ds-button-link>
     </ds-language-section>
 
-    <div id="review-container">
-      <div class="hero">
-        <ds-hero>코드리뷰를 통해 새로운 관점을 배울 수 있어요</ds-hero>
-        <ds-button-link
-          size="big"
-          variant="primary"
-          href="https://discord.gg/43UkheRV"
-          >디스코드 참여하기</ds-button-link
-        >
-      </div>
-      <div class="review-image">
-        <ds-image src="images/review.png" alt="review"></ds-image>
-      </div>
-    </div>
+    <ds-code-review-section>
+      <ds-hero slot="heading">
+        코드리뷰를 통해 새로운 관점을 배울 수 있어요
+      </ds-hero>
+      <ds-button-link
+        slot="button"
+        size="big"
+        variant="primary"
+        href="https://discord.gg/43UkheRV"
+      >
+        디스코드 참여하기
+      </ds-button-link>
+
+      <ds-image
+        slot="image"
+        src="images/review.png"
+        alt="review"
+        width="100%"
+        height="auto"
+      ></ds-image>
+    </ds-code-review-section>
 
     <div id="member-review-container">
       <span>참가자 후기</span>
