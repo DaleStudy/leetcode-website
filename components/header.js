@@ -190,7 +190,7 @@ class Header extends HTMLElement {
 
         <div class="buttons-container">
           <ds-button-link
-            href="#join-instruction-container"
+            href="#steps-section"
             size="small"
             variant="ghost"
             >참여방법 안내</ds-button-link
