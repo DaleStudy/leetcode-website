@@ -58,15 +58,20 @@ class Header extends HTMLElement {
       }
 
       header {
-        width: 80%;
-        margin: 0 auto;
-        justify-content: space-between;
         display: flex;
+        margin: 0 27px 0;
+        justify-content: space-between;
         align-items: center;
 
         @media only screen and (min-width: 768px) {
           flex-direction: row !important;
         }
+        
+        @media only screen and (min-width: 1024px) {
+          width: 80%;
+          margin: 0 auto;
+        }
+        
       }
 
       header.vertical {
