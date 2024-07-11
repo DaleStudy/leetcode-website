@@ -14,9 +14,8 @@ class StepsSection extends HTMLElement {
   createCss() {
     return css`
       section {
-        width: 80%;
         max-width: 1550px;
-        margin: 0 auto;
+        margin: 0 27px;
         padding: 100px 0;
         @media only screen and (min-width: 1024px) {
           padding: 149px 0;
