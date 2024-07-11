@@ -60,7 +60,7 @@ class StepList extends BaseStepElement {
 class Step extends BaseStepElement {
   constructor() {
     super();
-    this.validateAttributes(["step", "iconSrc"]);
+    this.validateAttributes(["step", "icon-src"]);
   }
 
   createCss() {
@@ -129,7 +129,7 @@ class Step extends BaseStepElement {
 
   createHtml() {
     const step = this.getAttribute("step");
-    const iconSrc = this.getAttribute("iconSrc");
+    const iconSrc = this.getAttribute("icon-src");
 
     return html`
       <article>

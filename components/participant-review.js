@@ -57,7 +57,7 @@ class ParticipantReviewList extends BaseParticipantReviewElement {
 class ParticipantReview extends BaseParticipantReviewElement {
   constructor() {
     super();
-    this.validateAttributes(["authorImgSrc", "content", "author"]);
+    this.validateAttributes(["author-img-src", "content", "author"]);
   }
 
   createCss() {
@@ -148,7 +148,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
   }
 
   createHtml() {
-    const authorImgSrc = this.getAttribute("authorImgSrc");
+    const authorImgSrc = this.getAttribute("author-img-src");
     const content = this.getAttribute("content");
     const author = this.getAttribute("author");
 
