@@ -81,13 +81,13 @@ class Header extends HTMLElement {
       .buttons-container {
         display: none;
         align-items: center;
-        column-gap: 40px;
+        column-gap: 30px;
 
         @media only screen and (min-width: 768px) {
           display: flex !important;
           flex-direction: row !important;
           align-items: center !important;
-          column-gap: 40px !important;
+          column-gap: 30px !important;
           margin-top: 0 !important;
         }
       }
