@@ -84,7 +84,17 @@ class ButtonLink extends HTMLElement {
         color: black;
         font-weight: normal;
         border-radius: 10px;
-        border: 2px solid black;
+        background: white;
+        border: 3px solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image: linear-gradient(white, white),
+          linear-gradient(135deg, var(--secondary), var(--primary));
+
+        @media only screen and (min-width: 768px) {
+          border-width: 5px;
+        }
+      }
       }
 
       @media only screen and (min-width: 768px) {
