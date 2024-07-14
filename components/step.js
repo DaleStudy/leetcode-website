@@ -150,6 +150,7 @@ class StepTextLink extends BaseStepElement {
     return css`
       a {
         text-decoration: underline;
+        text-underline-offset: 3px;
       }
       a:focus {
         outline: 3px solid var(--primary);
