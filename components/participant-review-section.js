@@ -18,6 +18,11 @@ class ParticipantReviewsSection extends HTMLElement {
         margin: 0 27px;
         padding: 100px 0;
 
+        @media only screen and (min-width: 768px) {
+          width: 80%;
+          margin: 0 auto;
+        }
+
         @media only screen and (min-width: 1024px) {
           padding: 149px 0;
         }
