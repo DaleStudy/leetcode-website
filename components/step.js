@@ -153,9 +153,26 @@ class StepTextLink extends BaseStepElement {
 
   createCss() {
     return css`
-      .step-text-link,
-      .step-text-link:hover {
+      .step-text-link {
         text-decoration: underline;
+      }
+      .step-text-link:focus {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+      .step-text-link:focus-visible {
+        outline: 3px solid var(--secondary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+      .step-text-link:hover {
+        font-weight: var(--font-weight-bold);
+        /* TODO : update underline weight after checking accurate value with the Designer */
+        text-decoration: underline 3px;
+      }
+      .step-text-link:active {
+        color: var(--primary);
       }
     `;
   }
