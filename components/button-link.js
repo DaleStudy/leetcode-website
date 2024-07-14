@@ -70,13 +70,55 @@ class ButtonLink extends HTMLElement {
         background-color: var(--primary);
       }
 
+      a.primary:focus {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a.primary:focus-visible {
+        outline: 3px solid var(--secondary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a.primary:hover {
+        background-color: #5536de;
+        font-weight: var(--font-weight-bold);
+      }
+
+      a.primary:active {
+        background-color: #160b46;
+        color: white;
+      }
+
       a.ghost {
         border: none;
         border-radius: 0;
       }
 
       a.small.ghost {
-        padding: 0;
+        padding: 10px 20px;
+      }
+
+      a.small.ghost:focus {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a.small.ghost:focus-visible {
+        outline: 3px solid var(--secondary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a.small.ghost:hover {
+        font-weight: var(--font-weight-bold);
+      }
+
+      a.small.ghost:active {
+        color: #846de9;
       }
 
       a.big.ghost {
@@ -95,6 +137,25 @@ class ButtonLink extends HTMLElement {
           border-width: 5px;
         }
       }
+
+      a.big.ghost:focus {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a.big.ghost:focus-visible {
+        outline: 3px solid var(--secondary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a.big.ghost:hover {
+        font-weight: var(--font-weight-bold);
+      }
+
+      a.big.ghost:active {
+        color: var(--primary);
       }
 
       @media only screen and (min-width: 768px) {
