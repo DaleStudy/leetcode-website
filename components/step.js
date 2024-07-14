@@ -153,25 +153,25 @@ class StepTextLink extends BaseStepElement {
 
   createCss() {
     return css`
-      .step-text-link {
+      a {
         text-decoration: underline;
       }
-      .step-text-link:focus {
+      a:focus {
         outline: 3px solid var(--primary);
         outline-offset: 2px;
         border-radius: 10px;
       }
-      .step-text-link:focus-visible {
+      a:focus-visible {
         outline: 3px solid var(--secondary);
         outline-offset: 2px;
         border-radius: 10px;
       }
-      .step-text-link:hover {
+      a:hover {
         font-weight: var(--font-weight-bold);
         /* TODO : update underline weight after checking accurate value with the Designer */
         text-decoration: underline 3px;
       }
-      .step-text-link:active {
+      a:active {
         color: var(--primary);
       }
     `;
@@ -180,7 +180,7 @@ class StepTextLink extends BaseStepElement {
   createHtml() {
     const link = this.getAttribute("link");
 
-    return html`<a class="step-text-link" target="_blank" href="${link}">
+    return html`<a target="_blank" href="${link}">
       <slot></slot>
     </a>`;
   }
