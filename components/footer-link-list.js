@@ -34,20 +34,17 @@ class FooterLinks extends HTMLElement {
         flex-direction: column;
         row-gap: 10px;
 
+        height: 100%;
         font-size: 16px;
         color: var(--bg-100);
-      }
 
-      @media only screen and (min-width: 768px) {
-        ul {
+        @media only screen and (min-width: 768px) {
           flex-direction: row;
           align-items: center;
           column-gap: 20px;
         }
-      }
 
-      @media only screen and (min-width: 1024px) {
-        ul {
+        @media only screen and (min-width: 1024px) {
           column-gap: 80px;
         }
       }
@@ -85,6 +82,30 @@ class FooterLink extends HTMLElement {
       li {
         color: var(--bg-100);
         font-size: 16px;
+      }
+
+      a {
+        padding: 15px;
+      }
+
+      a:focus {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--secondary);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
+
+      a:hover {
+        font-weight: bold;
+      }
+
+      a:active {
+        color: var(--primary);
       }
     `;
   }

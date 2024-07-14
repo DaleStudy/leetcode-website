@@ -22,7 +22,7 @@ class Footer extends HTMLElement {
         padding: 80px 27px;
 
         @media only screen and (min-width: 768px) {
-          padding: 180px 76px 100px 76px;
+          padding: 180px 151px 100px 144px;
         }
 
         @media only screen and (min-width: 1550px) {
@@ -47,6 +47,8 @@ class Footer extends HTMLElement {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
+
+        margin-left: -15px;
 
         @media only screen and (min-width: 768px) {
           flex-direction: row;
