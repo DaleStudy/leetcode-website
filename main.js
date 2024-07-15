@@ -10,6 +10,5 @@ import "./components/intro-section.js";
 import "./components/language-section.js";
 import "./components/participant-review.js";
 import "./components/participant-review-section.js";
-import "./components/seo-meta-tag/seo-meta-tag.js";
 import "./components/step.js";
 import "./components/step-section.js";
