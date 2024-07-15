@@ -217,7 +217,7 @@ class Header extends HTMLElement {
     return html`
       <header>
         <div class="header-content">
-          <a href="/">
+          <a href="/leetcode-website/">
             <svg
               id="logo"
               width="45"
