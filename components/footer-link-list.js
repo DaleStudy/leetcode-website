@@ -30,12 +30,6 @@ class FooterLinks extends HTMLElement {
   createCss() {
     return css`
       ul {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-      }
-
-      ul {
         display: flex;
         flex-direction: column;
         row-gap: 10px;
@@ -89,9 +83,6 @@ class FooterLink extends HTMLElement {
   createCss() {
     return css`
       li {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
         color: var(--bg-100);
         font-size: 16px;
       }

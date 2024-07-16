@@ -65,11 +65,6 @@ class Step extends BaseStepElement {
 
   createCss() {
     return css`
-      h3,
-      ::slotted(p) {
-        margin: 0;
-        padding: 0;
-      }
       article {
         width: 100%;
         height: 400px;
