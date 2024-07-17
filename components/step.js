@@ -149,6 +149,7 @@ class StepTextLink extends BaseStepElement {
   createCss() {
     return css`
       a {
+        display: inline-block;
         text-decoration: underline;
         text-underline-offset: 3px;
       }
@@ -172,8 +173,8 @@ class StepTextLink extends BaseStepElement {
       }
       a:hover {
         font-weight: var(--font-weight-bold);
-        /* TODO : update underline weight after checking accurate value with the Designer */
         text-decoration: underline 3px;
+        transition: 200ms;
       }
       a:active {
         color: var(--primary);
