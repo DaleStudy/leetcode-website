@@ -153,14 +153,22 @@ class StepTextLink extends BaseStepElement {
         text-underline-offset: 3px;
       }
       a:focus {
-        outline: 3px solid var(--primary);
+        outline: 2px solid var(--primary);
         outline-offset: 2px;
-        border-radius: 10px;
+        border-radius: 5px;
+
+        @media only screen and (min-width: 768px) {
+          outline: 3px solid var(--primary);
+        }
       }
       a:focus-visible {
-        outline: 3px solid var(--secondary);
+        outline: 2px solid var(--secondary);
         outline-offset: 2px;
-        border-radius: 10px;
+        border-radius: 5px;
+
+        @media only screen and (min-width: 768px) {
+          outline: 3px solid var(--secondary);
+        }
       }
       a:hover {
         font-weight: var(--font-weight-bold);
