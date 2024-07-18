@@ -19,6 +19,7 @@ class CodeReviewSection extends HTMLElement {
         justify-content: center;
         align-items: center;
         height: 100vh;
+        background-color: var(--bg-200);
       }
 
       section {
