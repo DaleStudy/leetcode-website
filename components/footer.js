@@ -17,7 +17,7 @@ class Footer extends HTMLElement {
       :host {
         display: block;
         height: 400px;
-        color: white;
+        color: var(--bg-100);
         background-color: var(--text-900);
         padding: 80px 27px;
 
