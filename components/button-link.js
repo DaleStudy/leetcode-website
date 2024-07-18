@@ -67,7 +67,7 @@ class ButtonLink extends HTMLElement {
       a.primary {
         color: white;
         font-weight: 500;
-        background-color: var(--primary);
+        background-color: var(--bg-400);
       }
 
       a.primary:focus {
