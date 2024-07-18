@@ -1,25 +1,10 @@
 import { css, html } from "../html-css-utils.js";
 
-class FooterLinks extends HTMLElement {
+class FooterLinkList extends HTMLElement {
   constructor() {
     super();
 
     this.render();
-    this.validateAttributes();
-  }
-
-  validateAttributes() {
-    const slot = this.shadowRoot.querySelector("slot");
-    const nodes = slot.assignedElements();
-
-    nodes.forEach((node) => {
-      if (
-        node.nodeType === Node.ELEMENT_NODE &&
-        node.tagName.toLowerCase() !== "ds-footer-link"
-      ) {
-        throw new Error("All children must be <ds-footer-link> elements.");
-      }
-    });
   }
 
   render() {
@@ -48,37 +33,7 @@ class FooterLinks extends HTMLElement {
           column-gap: 80px;
         }
       }
-    `;
-  }
 
-  createHtml() {
-    return html`<ul>
-      <slot></slot>
-    </ul>`;
-  }
-}
-
-class FooterLink extends HTMLElement {
-  constructor() {
-    super();
-
-    this.validateAttributes();
-    this.render();
-  }
-
-  validateAttributes() {
-    if (!this.hasAttribute("href")) {
-      throw new Error('The "href" attribute is required.');
-    }
-  }
-
-  render() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.innerHTML = this.createCss() + this.createHtml();
-  }
-
-  createCss() {
-    return css`
       li {
         color: var(--bg-100);
         font-size: 16px;
@@ -111,15 +66,35 @@ class FooterLink extends HTMLElement {
   }
 
   createHtml() {
-    const href = this.getAttribute("href");
+    return html`<ul>
+      <li>
+        <a
+          href="https://github.com/DaleStudy/leetcode-study/discussions/54"
+          target="_blank"
+        >
+          FAQ
+        </a>
+      </li>
 
-    return html`<li>
-      <a href=${href} target="_blank">
-        <slot></slot>
-      </a>
-    </li>`;
+      <li>
+        <a
+          href="https://github.com/DaleStudy/leetcode-study/discussions/52"
+          target="_blank"
+        >
+          Apply
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://github.com/DaleStudy/leetcode-study/blob/main/CONTRIBUTING.md"
+          target="_blank"
+        >
+          Guide
+        </a>
+      </li>
+    </ul>`;
   }
 }
 
-customElements.define("ds-footer-link-list", FooterLinks);
-customElements.define("ds-footer-link", FooterLink);
+customElements.define("ds-footer-link-list", FooterLinkList);
