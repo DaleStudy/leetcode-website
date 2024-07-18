@@ -65,7 +65,7 @@ class ButtonLink extends HTMLElement {
       }
 
       a.primary {
-        color: white;
+        color: var(--bg-100);
         font-weight: 500;
         background-color: var(--bg-400);
       }
@@ -88,8 +88,8 @@ class ButtonLink extends HTMLElement {
       }
 
       a.primary:active {
-        background-color: #160b46;
-        color: white;
+        background-color: var(--text-900);
+        color: var(--bg-100);
       }
 
       a.ghost {
@@ -118,19 +118,19 @@ class ButtonLink extends HTMLElement {
       }
 
       a.small.ghost:active {
-        color: #846de9;
+        color: var(--primary);
       }
 
       a.big.ghost {
         padding: auto;
-        color: black;
+        color: var(--text-900);
         font-weight: normal;
         border-radius: 10px;
-        background: white;
+        background: var(--bg-100);
         border: 3px solid transparent;
         background-clip: padding-box, border-box;
         background-origin: padding-box, border-box;
-        background-image: linear-gradient(white, white),
+        background-image: linear-gradient(var(--bg-100), var(--bg-100)),
           linear-gradient(135deg, var(--secondary), var(--primary));
 
         @media only screen and (min-width: 768px) {
