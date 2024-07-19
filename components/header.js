@@ -246,7 +246,7 @@ class Header extends HTMLElement {
             </svg>
             <span>달레 스터디</span>
           </a>
-          <button>
+          <button aria-label="menu button">
             <svg
               id="menuIcon"
               width="18"
