@@ -145,7 +145,6 @@ class Header extends HTMLElement {
 
         &:hover {
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-          font-weight: bold;
         }
 
         &:active svg path {
@@ -154,6 +153,13 @@ class Header extends HTMLElement {
 
         &:active span {
           color: var(--primary);
+        }
+
+        @media only screen and (min-width: 768px) {
+          &:hover {
+            box-shadow: none;
+            font-weight: var(--font-weight-bold);
+          }
         }
       }
 
