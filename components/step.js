@@ -174,7 +174,6 @@ class StepTextLink extends BaseStepElement {
       a:hover {
         font-weight: var(--font-weight-bold);
         text-decoration: underline 3px;
-        transition: 200ms;
       }
       a:active {
         color: var(--primary);
