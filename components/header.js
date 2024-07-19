@@ -106,7 +106,7 @@ class Header extends HTMLElement {
         gap: 10px;
         align-items: center;
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 10px 5px;
 
         span {
           display: none;
@@ -145,6 +145,7 @@ class Header extends HTMLElement {
 
         &:hover {
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+          font-weight: bold;
         }
 
         &:active svg path {
