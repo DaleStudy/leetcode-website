@@ -58,7 +58,7 @@ class IconLinkList extends HTMLElement {
 
   createHtml() {
     return html`<section>
-      <a href="https://www.algodale.com/" target="_blank">
+      <a href="https://www.algodale.com/" target="_blank" aria-label="Visit the Algodale website">
         <svg
           width="24"
           height="24"
@@ -73,7 +73,7 @@ class IconLinkList extends HTMLElement {
         </svg>
       </a>
 
-      <a href="https://www.linkedin.com/in/daleseo/" target="_blank">
+      <a href="https://www.linkedin.com/in/daleseo/" target="_blank" aria-label="Visit Dale Seo's LinkedIn profile">
         <svg
           width="24"
           height="24"
@@ -88,7 +88,7 @@ class IconLinkList extends HTMLElement {
         </svg>
       </a>
 
-      <a href="https://github.com/DaleStudy/leetcode-study" target="_blank">
+      <a href="https://github.com/DaleStudy/leetcode-study" target="_blank" aria-label="Visit the LeetCode study group's GitHub repository">
         <svg
           width="25"
           height="24"
@@ -103,7 +103,7 @@ class IconLinkList extends HTMLElement {
         </svg>
       </a>
 
-      <a href="https://www.youtube.com/@DaleSeo" target="_blank">
+      <a href="https://www.youtube.com/@DaleSeo" target="_blank" aria-label="Visit Dale Seo's YouTube channel">
         <svg
           width="25"
           height="18"
