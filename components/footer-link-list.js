@@ -71,7 +71,7 @@ class FooterLinkList extends HTMLElement {
         <a
           href="https://github.com/DaleStudy/leetcode-study/discussions/54"
           target="_blank"
-          aria-label="Read the FAQ discussion on LeetCode study group"
+          aria-label="Read the FAQ discussion on Algorithm study group"
         >
           FAQ
         </a>
@@ -81,7 +81,7 @@ class FooterLinkList extends HTMLElement {
         <a
           href="https://github.com/DaleStudy/leetcode-study/discussions/52"
           target="_blank"
-          aria-label="Apply for LeetCode study group participation"
+          aria-label="Apply for Algorithm study group participation"
         >
           Apply
         </a>
@@ -91,7 +91,7 @@ class FooterLinkList extends HTMLElement {
         <a
           href="https://github.com/DaleStudy/leetcode-study/blob/main/CONTRIBUTING.md"
           target="_blank"
-          aria-label="Read the contributing guide for the LeetCode study group"
+          aria-label="Read the contributing guide for the Algorithm study group"
         >
           Guide
         </a>
