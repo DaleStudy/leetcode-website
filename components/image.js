@@ -27,6 +27,7 @@ class Image extends HTMLElement {
     return css`
       img {
         display: block;
+        box-shadow: 2px 2px 4px 0 var(--bg-300);
       }
     `;
   }
