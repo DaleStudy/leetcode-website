@@ -29,7 +29,7 @@ class ParticipantReviewList extends BaseParticipantReviewElement {
         grid-template-columns: minmax(306px, 1fr);
         gap: 10px;
         place-content: center;
-        place-items: center;
+        place-items: baseline;
         margin-top: 20px;
 
         @media only screen and (min-width: 768px) {
