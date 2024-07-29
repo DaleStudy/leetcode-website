@@ -29,7 +29,7 @@ class ParticipantReviewList extends BaseParticipantReviewElement {
         grid-template-columns: minmax(306px, 1fr);
         gap: 10px;
         place-content: center;
-        place-items: baseline;
+        place-items: stretch;
         margin-top: 20px;
 
         @media only screen and (min-width: 768px) {
@@ -64,7 +64,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
     return css`
       article {
         width: 100%;
-        min-height: 300px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -74,15 +74,13 @@ class ParticipantReview extends BaseParticipantReviewElement {
         padding: 39px 20px;
 
         @media only screen and (min-width: 768px) {
-          min-height: 280px;
           padding: 37px 20px;
         }
 
         @media only screen and (min-width: 1024px) {
-          min-height: 203px;
           padding: 41px 51px 31px;
           flex-direction: row;
-          align-items: flex-start;
+          align-items: center;
         }
       }
       article blockquote,
@@ -107,9 +105,13 @@ class ParticipantReview extends BaseParticipantReviewElement {
       .participant-review-img figure img {
         width: 100%;
         height: 100%;
-        padding-top: 7px;
+        padding-top: 5px;
         border-radius: 48%;
         background-color: #ffffff;
+
+        @media only screen and (min-width: 1024px) {
+          padding-top: -5px;
+        }
       }
       .participant-review-content {
         display: flex;
