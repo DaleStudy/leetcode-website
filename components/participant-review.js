@@ -152,6 +152,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
     const authorImgSrc = this.getAttribute("author-img-src");
     const content = this.getAttribute("content");
     const author = this.getAttribute("author");
+    const authorLink = this.getAttribute("author-link");
 
     return html`
       <article>
@@ -162,7 +163,11 @@ class ParticipantReview extends BaseParticipantReviewElement {
         </section>
         <section class="participant-review-content">
           <blockquote>${content}</blockquote>
-          <figcaption>${author}</figcaption>
+          <figcaption>
+            <a target="_blank" ${authorLink ? `href="${authorLink}"` : ""}>
+              ${author}
+            </a>
+          </figcaption>
         </section>
       </article>
     `;
