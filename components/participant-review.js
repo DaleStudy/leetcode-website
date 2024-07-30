@@ -105,7 +105,6 @@ class ParticipantReview extends BaseParticipantReviewElement {
       .participant-review-img figure img {
         width: 100%;
         height: 100%;
-        padding-top: 5px;
         border-radius: 48%;
         background-color: #ffffff;
 
