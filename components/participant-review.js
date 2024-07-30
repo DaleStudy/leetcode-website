@@ -145,6 +145,41 @@ class ParticipantReview extends BaseParticipantReviewElement {
           text-align: right;
         }
       }
+      .participant-review-content figcaption .has-link {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+
+        &:focus {
+          outline: 2px solid var(--primary);
+          outline-offset: 2px;
+          border-radius: 5px;
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--secondary);
+          outline-offset: 2px;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          font-weight: var(--font-weight-bold);
+          text-decoration: underline 3px;
+        }
+
+        &:active {
+          color: var(--primary);
+        }
+
+        @media only screen and (min-width: 768px) {
+          &:focus {
+            outline: 3px solid var(--primary);
+          }
+
+          &:focus-visible {
+            outline: 3px solid var(--secondary);
+          }
+        }
+      }
     `;
   }
 
@@ -164,7 +199,10 @@ class ParticipantReview extends BaseParticipantReviewElement {
         <section class="participant-review-content">
           <blockquote>${content}</blockquote>
           <figcaption>
-            <a target="_blank" ${authorLink ? `href="${authorLink}"` : ""}>
+            <a
+              target="_blank"
+              ${authorLink ? `href="${authorLink}" class="has-link"` : ""}
+            >
               ${author}
             </a>
           </figcaption>
