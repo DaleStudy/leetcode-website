@@ -1,14 +1,5 @@
-import "./components/button-link.js";
-import "./components/code-review-section.js";
-import "./components/footer-link-list.js";
-import "./components/footer.js";
-import "./components/header.js";
-import "./components/hero.js";
-import "./components/icon-link-list.js";
-import "./components/image.js";
-import "./components/intro-section.js";
-import "./components/language-section.js";
-import "./components/participant-review.js";
-import "./components/participant-review-section.js";
-import "./components/step.js";
-import "./components/step-section.js";
+import "./components/index.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("body").style.display = "block";
+});
