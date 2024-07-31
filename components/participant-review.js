@@ -129,6 +129,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
         font-size: 14px;
         margin-top: 17px;
         word-break: keep-all;
+        font-weight: var(--font-weight-regular);
 
         @media only screen and (min-width: 1024px) {
           margin-top: 0;
@@ -140,6 +141,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
         width: 100%;
         font-size: 16px;
         text-align: center;
+        font-weight: var(--font-weight-medium);
 
         @media only screen and (min-width: 1024px) {
           text-align: right;
