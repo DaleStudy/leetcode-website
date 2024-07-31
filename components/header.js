@@ -224,7 +224,7 @@ class Header extends HTMLElement {
     return html`
       <header>
         <div class="header-content">
-          <a href="/" aria-label="Go to the homepage of Dale Study">
+          <a href="/" aria-label="Go to the homepage of DaleStudy">
             <svg
               id="logo"
               width="45"

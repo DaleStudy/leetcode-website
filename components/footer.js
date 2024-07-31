@@ -84,7 +84,7 @@ class Footer extends HTMLElement {
         <slot name="icon-link-list"></slot>
       </section>
 
-      <p>© 2024 Dale Study. All rights reserved.</p>
+      <p>© 2024 DaleStudy. All rights reserved.</p>
     </footer>`;
   }
 }
