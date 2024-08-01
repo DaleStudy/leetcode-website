@@ -109,7 +109,6 @@ class Step extends BaseStepElement {
           width: 60px;
           height: 60px;
           margin: 50px 0;
-          object-fit: contain;
         }
       }
       .step-content {
