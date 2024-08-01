@@ -103,6 +103,7 @@ class Step extends BaseStepElement {
         width: auto;
         height: 40px;
         margin: 20px 0;
+        object-fit: contain;
 
         @media only screen and (min-width: 768px) {
           width: 60px;
