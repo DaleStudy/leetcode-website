@@ -147,7 +147,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           text-align: right;
         }
       }
-      .participant-review-content figcaption .has-link {
+      .participant-review-content figcaption a {
         text-decoration: underline;
         text-underline-offset: 5px;
 
@@ -201,12 +201,11 @@ class ParticipantReview extends BaseParticipantReviewElement {
         <section class="participant-review-content">
           <blockquote>${content}</blockquote>
           <figcaption>
-            <a
-              target="_blank"
-              ${authorLink ? `href="${authorLink}" class="has-link"` : ""}
-            >
-              ${author}
-            </a>
+            ${authorLink
+              ? `<a target="_blank" href="${authorLink}" aria-label="More about author">
+                  ${author}
+                </a>`
+              : author}
           </figcaption>
         </section>
       </article>
