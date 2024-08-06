@@ -1,4 +1,5 @@
 import { css, html } from "../html-css-utils.js";
+import { APPLICATION_URL } from "../data.js";
 
 class FooterLinkList extends HTMLElement {
   constructor() {
@@ -79,7 +80,7 @@ class FooterLinkList extends HTMLElement {
 
       <li>
         <a
-          href="https://github.com/DaleStudy/leetcode-study/discussions/52"
+          href="${APPLICATION_URL}"
           target="_blank"
           aria-label="Apply for Algorithm study group participation"
         >
