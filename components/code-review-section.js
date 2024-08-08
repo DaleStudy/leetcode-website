@@ -1,4 +1,5 @@
 import { css, html } from "../html-css-utils.js";
+import { DISCORD_URL } from "../data.js";
 
 class CodeReviewSection extends HTMLElement {
   constructor() {
@@ -71,19 +72,25 @@ class CodeReviewSection extends HTMLElement {
         }
       }
     `;
-    }
-  
+  }
 
   createHtml() {
     return html`
       <section>
         <aside>
-          <slot name="image"></slot>
+          <ds-image
+            src="images/review.png"
+            alt="review"
+            width="100%"
+            height="auto"
+          ></ds-image>
         </aside>
 
         <div class="hero">
-          <slot name="heading"></slot>
-          <slot name="button"></slot>
+          <ds-hero> 코드리뷰를 통해 새로운 관점을 배울 수 있어요 </ds-hero>
+          <ds-button-link size="big" variant="primary" href="${DISCORD_URL}">
+            디스코드 참여하기
+          </ds-button-link>
         </div>
       </section>
     `;

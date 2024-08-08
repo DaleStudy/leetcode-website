@@ -1,5 +1,5 @@
 import { html, css } from "../html-css-utils.js";
-import { APPLICATION_URL } from "../data.js";
+import { APPLICATION_URL, DISCORD_URL } from "../data.js";
 
 class StepsSection extends HTMLElement {
   constructor() {
@@ -66,7 +66,7 @@ class StepsSection extends HTMLElement {
           <ds-step step="3" icon-src="images/icon_step3.png">
             <p slot="content">
               매주 스터디 멤버들끼리
-              <ds-step-text-link link="https://discord.com/invite/6TwzdnW6ze">
+              <ds-step-text-link link="${DISCORD_URL}">
                 디스코드
               </ds-step-text-link>
               에서 간단한 모임을 가져요. 멤버 간의 친밀감도 쌓고 해외 취업
