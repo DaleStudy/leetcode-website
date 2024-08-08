@@ -1,5 +1,5 @@
 import { html, css } from "../html-css-utils.js";
-import { APPLICATION_URL, DISCORD_URL } from "../data.js";
+import { APPLICATION_URL, DISCORD_URL, PROJECT_URL } from "../data.js";
 
 class StepsSection extends HTMLElement {
   constructor() {
@@ -55,9 +55,7 @@ class StepsSection extends HTMLElement {
             <p slot="content">
               답안 제출과 확인은 깃허브를 통해 이루어져요. 스터디 전체
               진행상황을 알고 싶다면
-              <ds-step-text-link
-                link="https://github.com/orgs/DaleStudy/projects/1"
-              >
+              <ds-step-text-link link="${PROJECT_URL}">
                 프로젝트 보드
               </ds-step-text-link>
               를 통해 파악할 수 있어요.
