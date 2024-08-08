@@ -1,4 +1,5 @@
 import { css, html } from "../html-css-utils.js";
+import { DISCORD_URL } from "../data.js";
 
 class IntroSection extends HTMLElement {
   constructor() {
@@ -87,12 +88,19 @@ class IntroSection extends HTMLElement {
     return html`
       <section>
         <aside>
-          <slot name="image"></slot>
+          <ds-image
+            src="images/roadmap.png"
+            alt="roadmap"
+            width="100%"
+            height="auto"
+          ></ds-image>
         </aside>
 
         <article>
-          <slot name="heading"></slot>
-          <slot name="button"></slot>
+          <ds-hero> 해외취업을 위한 커뮤니티 기반 알고리즘 스터디 </ds-hero>
+          <ds-button-link size="big" variant="primary" href="${DISCORD_URL}">
+            디스코드 참여하기
+          </ds-button-link>
         </article>
       </section>
     `;

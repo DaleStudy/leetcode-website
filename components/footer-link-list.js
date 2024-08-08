@@ -1,5 +1,5 @@
 import { css, html } from "../html-css-utils.js";
-import { APPLICATION_URL } from "../data.js";
+import { APPLICATION_URL, CONTRIBUTING_URL, FAQ_URL } from "../data.js";
 
 class FooterLinkList extends HTMLElement {
   constructor() {
@@ -70,7 +70,7 @@ class FooterLinkList extends HTMLElement {
     return html`<ul>
       <li>
         <a
-          href="https://github.com/DaleStudy/leetcode-study/discussions/54"
+          href="${FAQ_URL}"
           target="_blank"
           aria-label="Read the FAQ discussion on Algorithm study group"
         >
@@ -90,7 +90,7 @@ class FooterLinkList extends HTMLElement {
 
       <li>
         <a
-          href="https://github.com/DaleStudy/leetcode-study/blob/main/CONTRIBUTING.md"
+          href="${CONTRIBUTING_URL}"
           target="_blank"
           aria-label="Read the contributing guide for the Algorithm study group"
         >

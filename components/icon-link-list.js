@@ -1,4 +1,10 @@
 import { css, html } from "../html-css-utils.js";
+import {
+  ALGO_DALE_URL,
+  GITHUB_URL,
+  LINKED_IN_URL,
+  YOUTUBE_URL,
+} from "../data.js";
 
 class IconLinkList extends HTMLElement {
   constructor() {
@@ -58,7 +64,11 @@ class IconLinkList extends HTMLElement {
 
   createHtml() {
     return html`<section>
-      <a href="https://www.algodale.com/" target="_blank" aria-label="Visit the Algodale website">
+      <a
+        href="${ALGO_DALE_URL}"
+        target="_blank"
+        aria-label="Visit the Algodale website"
+      >
         <svg
           width="24"
           height="24"
@@ -73,7 +83,11 @@ class IconLinkList extends HTMLElement {
         </svg>
       </a>
 
-      <a href="https://www.linkedin.com/in/daleseo/" target="_blank" aria-label="Visit Dale's LinkedIn profile">
+      <a
+        href="${LINKED_IN_URL}"
+        target="_blank"
+        aria-label="Visit Dale's LinkedIn profile"
+      >
         <svg
           width="24"
           height="24"
@@ -88,7 +102,11 @@ class IconLinkList extends HTMLElement {
         </svg>
       </a>
 
-      <a href="https://github.com/DaleStudy/leetcode-study" target="_blank" aria-label="Visit the Algorithm study group's GitHub repository">
+      <a
+        href="${GITHUB_URL}"
+        target="_blank"
+        aria-label="Visit the Algorithm study group's GitHub repository"
+      >
         <svg
           width="25"
           height="24"
@@ -103,7 +121,11 @@ class IconLinkList extends HTMLElement {
         </svg>
       </a>
 
-      <a href="https://www.youtube.com/@DaleSeo" target="_blank" aria-label="Visit Dale's YouTube channel">
+      <a
+        href="${YOUTUBE_URL}"
+        target="_blank"
+        aria-label="Visit Dale's YouTube channel"
+      >
         <svg
           width="25"
           height="18"

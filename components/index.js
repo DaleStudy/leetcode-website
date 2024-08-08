@@ -10,5 +10,5 @@ import "./intro-section.js";
 import "./language-section.js";
 import "./participant-review-section.js";
 import "./participant-review.js";
-import "./step-section.js";
+import "./steps-section.js";
 import "./step.js";
