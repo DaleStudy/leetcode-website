@@ -78,14 +78,16 @@ class Footer extends HTMLElement {
   }
 
   createHtml() {
-    return html`<footer>
-      <section>
-        <slot name="footer-link-list"></slot>
-        <slot name="icon-link-list"></slot>
-      </section>
+    return html`
+      <footer>
+        <section>
+          <ds-footer-link-list></ds-footer-link-list>
+          <ds-icon-link-list></ds-icon-link-list>
+        </section>
 
-      <p>© 2024 DaleStudy. All rights reserved.</p>
-    </footer>`;
+        <p>© 2024 DaleStudy. All rights reserved.</p>
+      </footer>
+    `;
   }
 }
 

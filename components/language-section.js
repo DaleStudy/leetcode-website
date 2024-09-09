@@ -76,34 +76,34 @@ class LanguageSection extends HTMLElement {
         }
       }
 
-      ::slotted([slot="mobile-image"]) {
+      #mobile-image {
         display: block;
       }
 
-      ::slotted([slot="tablet-image"]) {
+      #tablet-image {
         display: none;
       }
 
-      ::slotted([slot="desktop-image"]) {
+      #desktop-image {
         display: none;
       }
 
       @media only screen and (min-width: 768px) {
-        ::slotted([slot="mobile-image"]) {
+        #mobile-image {
           display: none;
         }
 
-        ::slotted([slot="tablet-image"]) {
+        #tablet-image {
           display: block;
         }
       }
 
       @media only screen and (min-width: 1024px) {
-        ::slotted([slot="tablet-image"]) {
+        #tablet-image {
           display: none;
         }
 
-        ::slotted([slot="desktop-image"]) {
+        #desktop-image {
           display: block;
         }
       }
@@ -114,16 +114,36 @@ class LanguageSection extends HTMLElement {
     return html`
       <section>
         <aside>
-          <slot name="tablet-image"></slot>
-          <slot name="desktop-image"></slot>
-          <slot name="mobile-image"></slot>
+          <ds-image
+            id="mobile-image"
+            src="images/vertical-language.png"
+            alt="languages"
+            width="100%"
+            height="auto"
+          ></ds-image>
+          <ds-image
+            id="tablet-image"
+            src="images/horizontal-language.png"
+            alt="languages"
+            width="100%"
+            height="auto"
+          ></ds-image>
+          <ds-image
+            id="desktop-image"
+            src="images/vertical-language.png"
+            alt="languages"
+            width="100%"
+            height="auto"
+          ></ds-image>
         </aside>
 
         <div class="gap"></div>
 
         <div class="hero">
-          <slot name="heading"></slot>
-          <slot name="button"></slot>
+          <ds-hero> 지역에 관계없이 다양한 언어로 참여할 수 있어요. </ds-hero>
+          <ds-button-link size="big" variant="ghost" href="#steps-section">
+            참여방법 안내
+          </ds-button-link>
         </div>
       </section>
     `;
