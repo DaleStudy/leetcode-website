@@ -1,7 +1,7 @@
 export const APPLICATION_URL =
   "https://github.com/DaleStudy/leetcode-study/discussions/209";
 export const DISCORD_URL = "https://discord.gg/6TwzdnW6ze";
-export const PROJECT_URL = "https://github.com/orgs/DaleStudy/projects/1";
+export const PROJECT_URL = "https://github.com/orgs/DaleStudy/projects/3";
 export const CONTRIBUTING_URL =
   "https://github.com/DaleStudy/leetcode-study/blob/main/CONTRIBUTING.md";
 export const FAQ_URL =
