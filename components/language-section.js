@@ -78,32 +78,28 @@ class LanguageSection extends HTMLElement {
 
       #mobile-image {
         display: block;
+
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
       }
 
       #tablet-image {
         display: none;
+
+        @media only screen and (min-width: 768px) {
+          display: block;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          display: none;
+        }
       }
 
       #desktop-image {
         display: none;
-      }
 
-      @media only screen and (min-width: 768px) {
-        #mobile-image {
-          display: none;
-        }
-
-        #tablet-image {
-          display: block;
-        }
-      }
-
-      @media only screen and (min-width: 1024px) {
-        #tablet-image {
-          display: none;
-        }
-
-        #desktop-image {
+        @media only screen and (min-width: 1024px) {
           display: block;
         }
       }
