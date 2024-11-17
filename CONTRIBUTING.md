@@ -40,4 +40,4 @@ We manage our project using GitHub Projects. You can find the project [here](htt
 
 ## Community
 
-- Join our [Discord](https://discord.gg/6TwzdnW6ze) to connect with other contributors.
+- Join our [Discord](https://dales.link/discord) to connect with other contributors.

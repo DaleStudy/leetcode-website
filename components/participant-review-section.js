@@ -33,7 +33,7 @@ class ParticipantReviewsSection extends HTMLElement {
   createHtml() {
     return html`
       <section>
-        <ds-hero>참가자 후기</ds-hero>
+        <ds-hero>참여자 후기</ds-hero>
         <ds-participant-review-list>
           <ds-participant-review
             author-img-src="images/participant_1.jpeg"
