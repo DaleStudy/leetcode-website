@@ -141,6 +141,14 @@ class ParticipantReviewsSection extends HTMLElement {
             author="jaejeong1"
             author-link="https://github.com/jaejeong1"
           ></ds-participant-review>
+          <ds-participant-review
+            author-img-src="https://avatars.githubusercontent.com/u/63578094"
+            content="저는 코딩테스트를 잘 알지는 못하지만 그렇다고 모르지 않는 수준의 개발자였어요. 매번 공부하다가 중간에 포기하고 매번 스택, 큐, bfs정도의 레벨까지만 풀고 dp같이 어려운 문제를 만나면 다음에 해야지 하는 날이 많았어요. 중간에 포기하는 사람 같아서 이번에 달레스터디를 통해 1문제씩이라도 15주 동안 완주해 보는 사람이 되고자 스터디에 참여했습니다.
+달레스터디를 꾸준히 할 수 있었던 건 구성이 좋은 커리큘럼과 스터디원들과 소통하는 점이 제가 완주할 수 있었던 이유였어요. 매주 easy 난이도부터 medium 많게는 hard까지 풀 수 있었는데, 유형이 비슷한 문제가 다음 주에도 나오는 경우도 있어 다시 한번 회고하며 머릿속에 영구저장되는 경험을 했어요. 그리고 스터디원들과 대화를 하면서 내가 몰랐던 부분, 다른 사람의 접근 방식을 간접적으로 들으면서 문제에 대한 접근 방식을 알게 되어 문제 울렁증을 극복할 수 있었어요.
+만약 달레스터디를 고민하시는 분이 계신다면 무조건 추천하며, 준비물은 스터디원들과 적극적으로 소통하는 마음가짐을 가지고 오는 것을 추천합니다!"
+            author="이선재"
+            author-link="https://github.com/Sunjae95"
+          ></ds-participant-review>
         </ds-participant-review-list>
       </section>
     `;
