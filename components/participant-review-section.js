@@ -127,6 +127,20 @@ class ParticipantReviewsSection extends HTMLElement {
             author="EGON"
             author-link="https://github.com/lymchgmk"
           ></ds-participant-review>
+          <ds-participant-review
+            author-img-src="https://avatars.githubusercontent.com/u/89735640"
+            content="먼저 15주 간 스터디를 이끌어 주신 @DaleSeo 님과 @SamTheKorean 님 및 코치분들께 감사인사를 드립니다.
+덕분에 혼자서 하기 어려웠던 꾸준한 알고리즘 스터디를 완주할 수 있었습니다.
+
+혼자서 공부할때 느꼈던 막혔을 때의 어려움을 풀 수 있는 수단으로서 큰 도움이 됐습니다. 다른 스터디원들의 풀이 또는 달레님의 해설은 빠른 트러블 슈팅과 알고리즘 풀이 시야를 빠르게 넓히는데 효과적이었습니다.
+또한, 매주 온라인 스터디를 진행하는데 이때 풀이를 설명하는 경험이 이해의 깊이를 늘리는데 효과적이었고, 실제 인터뷰 과정과도 유사해 추후 커리어 확장에도 긍정적인 영향을 기대할 수 있었습니다.
+그리고 간간히 여러 나라와 근무 환경에 있는 스터디원들과의 경험/근황 공유 및 스몰 토크도 유익하고 즐거웠습니다.
+
+앞으로도 이렇게 유익한 해외취업 알고리즘 스터디로 긍정적인 영향을 받은 분들이 더 많아지면 좋겠습니다.
+감사합니다!"
+            author="jaejeong1"
+            author-link="https://github.com/jaejeong1"
+          ></ds-participant-review>
         </ds-participant-review-list>
       </section>
     `;
