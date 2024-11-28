@@ -1,5 +1,5 @@
 import { css, html } from "../html-css-utils.js";
-import { APPLICATION_URL, CONTRIBUTING_URL, FAQ_URL } from "../data.js";
+import { APPLICATION_URL, CONTRIBUTING_URL, WIKI_URL } from "../data.js";
 
 class FooterLinkList extends HTMLElement {
   constructor() {
@@ -70,11 +70,11 @@ class FooterLinkList extends HTMLElement {
     return html`<ul>
       <li>
         <a
-          href="${FAQ_URL}"
+          href="${WIKI_URL}"
           target="_blank"
-          aria-label="Read the FAQ discussion on Algorithm study group"
+          aria-label="Read the Wiki page on Algorithm study group"
         >
-          FAQ
+          Wiki
         </a>
       </li>
 
