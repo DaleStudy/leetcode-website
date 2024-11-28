@@ -63,12 +63,12 @@ class StepsSection extends HTMLElement {
           </ds-step>
           <ds-step step="3" icon-src="images/icon_step3.png">
             <p slot="content">
-              매주 스터디 멤버들끼리
+              스터디 멤버 간에 친밀감을 쌓기 위해
               <ds-step-text-link link="${DISCORD_URL}">
                 디스코드
               </ds-step-text-link>
-              에서 간단한 모임을 가져요. 멤버 간의 친밀감도 쌓고 해외 취업
-              관련한 유용한 정보도 공유하고 있어요.
+              에서 자율적인 대화와 모임을 가져요. 함께 코딩 시험/면접 준비를
+              하고 해외 취업 관련한 유용한 정보도 공유하고 있어요.
             </p>
           </ds-step>
         </ds-step-list>
