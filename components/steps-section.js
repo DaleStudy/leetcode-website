@@ -43,8 +43,8 @@ class StepsSection extends HTMLElement {
         <ds-step-list>
           <ds-step step="1" icon-src="images/icon_step1.png">
             <p slot="content">
-              현재 스터디 2기(2024년 8/11~11/23)가 진행중이에요. 11/30에
-              시작하는 다음 기수 스터디 참여를 원한다면
+              현재 스터디 3기(2024년 12/8 ~ 2025년 3/22)가 진행중이에요. 다음
+              기수 스터디 참여를 원한다면
               <ds-step-text-link link="${APPLICATION_URL}">
                 여기
               </ds-step-text-link>
