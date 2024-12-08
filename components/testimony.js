@@ -1,6 +1,6 @@
 import { css, html } from "../html-css-utils.js";
 
-class BaseParticipantReviewElement extends HTMLElement {
+class BaseTestimonyElement extends HTMLElement {
   constructor() {
     super();
     this.render();
@@ -20,10 +20,10 @@ class BaseParticipantReviewElement extends HTMLElement {
   }
 }
 
-class ParticipantReviewList extends BaseParticipantReviewElement {
+class TestimonyList extends BaseTestimonyElement {
   createCss() {
     return css`
-      .participant-review-list {
+      .testimony-list {
         width: 100%;
         display: grid;
         grid-template-columns: minmax(306px, 1fr);
@@ -47,14 +47,14 @@ class ParticipantReviewList extends BaseParticipantReviewElement {
 
   createHtml() {
     return html`
-      <div class="participant-review-list">
+      <div class="testimony-list">
         <slot></slot>
       </div>
     `;
   }
 }
 
-class ParticipantReview extends BaseParticipantReviewElement {
+class Testimony extends BaseTestimonyElement {
   constructor() {
     super();
     this.validateAttributes(["author-img-src", "content", "author"]);
@@ -92,7 +92,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           margin-top: 16px;
         }
       }
-      .participant-review-img {
+      .testimony-img {
         width: 104px;
         height: 104px;
         flex-shrink: 0;
@@ -102,7 +102,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           margin-right: 31px;
         }
       }
-      .participant-review-img figure img {
+      .testimony-img figure img {
         width: 100%;
         height: 100%;
         border-radius: 48%;
@@ -112,7 +112,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           padding-top: -5px;
         }
       }
-      .participant-review-content {
+      .testimony-content {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -125,7 +125,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           text-align: left;
         }
       }
-      .participant-review-content blockquote {
+      .testimony-content blockquote {
         font-size: 14px;
         margin-top: 17px;
         word-break: keep-all;
@@ -137,7 +137,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           word-break: unset;
         }
       }
-      .participant-review-content figcaption {
+      .testimony-content figcaption {
         width: 100%;
         font-size: 16px;
         text-align: center;
@@ -147,7 +147,7 @@ class ParticipantReview extends BaseParticipantReviewElement {
           text-align: right;
         }
       }
-      .participant-review-content figcaption a {
+      .testimony-content figcaption a {
         text-decoration: underline;
         text-underline-offset: 5px;
 
@@ -193,12 +193,12 @@ class ParticipantReview extends BaseParticipantReviewElement {
 
     return html`
       <article>
-        <section class="participant-review-img">
+        <section class="testimony-img">
           <figure>
             <img src="${authorImgSrc}" alt="Author profile image" />
           </figure>
         </section>
-        <section class="participant-review-content">
+        <section class="testimony-content">
           <blockquote>${content}</blockquote>
           <figcaption>
             ${authorLink
@@ -213,5 +213,5 @@ class ParticipantReview extends BaseParticipantReviewElement {
   }
 }
 
-customElements.define("ds-participant-review-list", ParticipantReviewList);
-customElements.define("ds-participant-review", ParticipantReview);
+customElements.define("ds-testimony-list", TestimonyList);
+customElements.define("ds-testimony", Testimony);
