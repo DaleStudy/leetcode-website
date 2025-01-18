@@ -1,5 +1,5 @@
 import { css, html } from "../html-css-utils.js";
-import { DISCORD_URL } from "../data.js";
+import { DISCORD_URL, LEADERBOARD_URL } from "../data.js";
 
 class Header extends HTMLElement {
   constructor() {
@@ -287,10 +287,13 @@ class Header extends HTMLElement {
 
         <div class="buttons-container">
           <ds-button-link href="#steps-section" size="small" variant="ghost"
-            >참여방법 안내</ds-button-link
+            >참여방법</ds-button-link
+          >
+          <ds-button-link href="${LEADERBOARD_URL}" size="small" variant="ghost"
+            >리더보드</ds-button-link
           >
           <ds-button-link href="${DISCORD_URL}" size="small" variant="primary"
-            >디스코드 참여하기</ds-button-link
+            >디스코드</ds-button-link
           >
         </div>
       </header>
