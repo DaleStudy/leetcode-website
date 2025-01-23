@@ -13,6 +13,11 @@ class TestimonySection extends HTMLElement {
 
   createCss() {
     return css`
+      :host {
+        display: block;
+        background-color: var(--bg-200);
+      }
+
       section {
         max-width: 1550px;
         margin: 0 27px;

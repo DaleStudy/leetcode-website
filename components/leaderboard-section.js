@@ -1,6 +1,7 @@
+import { LEADERBOARD_URL } from "../data.js";
 import { css, html } from "../html-css-utils.js";
 
-class LanguageSection extends HTMLElement {
+class LeaderboardSection extends HTMLElement {
   constructor() {
     super();
     this.render();
@@ -73,35 +74,7 @@ class LanguageSection extends HTMLElement {
         width: 100%;
 
         @media only screen and (min-width: 1024px) {
-          width: 47%;
-        }
-      }
-
-      #mobile-image {
-        display: block;
-
-        @media only screen and (min-width: 768px) {
-          display: none;
-        }
-      }
-
-      #tablet-image {
-        display: none;
-
-        @media only screen and (min-width: 768px) {
-          display: block;
-        }
-
-        @media only screen and (min-width: 1024px) {
-          display: none;
-        }
-      }
-
-      #desktop-image {
-        display: none;
-
-        @media only screen and (min-width: 1024px) {
-          display: block;
+          width: 70%;
         }
       }
     `;
@@ -112,22 +85,7 @@ class LanguageSection extends HTMLElement {
       <section>
         <aside>
           <ds-image
-            id="mobile-image"
-            src="images/vertical-language.png"
-            alt="languages"
-            width="100%"
-            height="auto"
-          ></ds-image>
-          <ds-image
-            id="tablet-image"
-            src="images/horizontal-language.png"
-            alt="languages"
-            width="100%"
-            height="auto"
-          ></ds-image>
-          <ds-image
-            id="desktop-image"
-            src="images/vertical-language.png"
+            src="images/leaderboard.png"
             alt="languages"
             width="100%"
             height="auto"
@@ -137,9 +95,9 @@ class LanguageSection extends HTMLElement {
         <div class="gap"></div>
 
         <div class="hero">
-          <ds-hero> 지역에 관계없이 다양한 언어로 참여할 수 있어요. </ds-hero>
-          <ds-button-link size="big" variant="ghost" href="#steps-section">
-            참여방법 안내
+          <ds-hero> 성장의 발자취를 리더보드에서 확인할 수 있어요 </ds-hero>
+          <ds-button-link size="big" variant="ghost" href="${LEADERBOARD_URL}">
+            리더보드 보기
           </ds-button-link>
         </div>
       </section>
@@ -147,4 +105,4 @@ class LanguageSection extends HTMLElement {
   }
 }
 
-customElements.define("ds-language-section", LanguageSection);
+customElements.define("ds-leaderboard-section", LeaderboardSection);
