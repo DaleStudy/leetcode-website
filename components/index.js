@@ -8,6 +8,7 @@ import "./icon-link-list.js";
 import "./image.js";
 import "./intro-section.js";
 import "./language-section.js";
+import "./leaderboard-section.js";
 import "./testimony-section.js";
 import "./testimony.js";
 import "./steps-section.js";

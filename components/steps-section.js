@@ -16,7 +16,7 @@ class StepsSection extends HTMLElement {
     return css`
       :host {
         display: block;
-        background-color: var(--bg-200);
+        background-color: var(--bg-100);
       }
 
       section {
